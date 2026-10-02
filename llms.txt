@@ -1,0 +1,21 @@
+# Fratelli d'Italia — restaurante italiano en Madrid
+
+> Grupo de restaurantes italianos en el centro de Madrid fundado por dos cocineros italianos, uno de Cerdeña (Sardegna) y otro de las Marcas (Marche), que se conocieron trabajando en la misma cocina. Pizza al horno de leña, pasta fresca, entrantes italianos y cannoli rellenos al momento. Tres locales: Retiro y Chueca (restaurantes con reserva) y Lavapiés (take away, pizza por porciones y envío a domicilio).
+
+## Locales
+
+- **Fratelli d'Italia Retiro** — restaurante. Calle de Antonio Arias, 4, 28009 Madrid. Tel. +34 912 345 678. Martes a jueves 13:00–16:00 y 20:00–23:00; viernes a domingo 13:00–23:00; lunes cerrado. Reserva online en Google.
+- **Fratelli d'Italia Chueca** — restaurante. Calle de Hortaleza, 28, 28004 Madrid. Tel. +34 912 345 679. Martes a jueves 13:00–16:00 y 20:00–23:30; viernes a domingo 13:00–23:30; lunes cerrado. Reserva online en Google.
+- **Fratelli d'Italia Lavapiés** — take away y porciones. Calle del Sombrerete, 1, 28012 Madrid. Tel. +34 912 345 680. Martes a domingo 13:00–23:30; lunes cerrado. Envío a domicilio por Glovo: https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid
+
+## Carta (precios en euros)
+
+- Pizzas: Marinara 13,50 · Diavola 15,50 · Quattro Stagioni 16,50 · Burrata e Prosciutto 18,50 · Funghi Porcini 17,50 · Verdure di Stagione (vegetariana) 14,50
+- Entrantes: Bruschetta al Pomodoro 6,50 · Supplì alla Romana 8,50 · Tabla de Embutidos Italianos 14,00 · Burrata con Tomate 11,50
+- Pasta (Retiro y Chueca): Spaghetti alla Carbonara (sin nata) 14,00 · Rigatoni all'Amatriciana 13,50 · Paccheri al Ragù Napoletano 15,00 · Tagliatelle al Pesto Genovese 13,00
+- Postres: Cannoli Siciliani 5,00/ud · Tiramisù Casero 6,50 · Panna Cotta al Pistacchio 6,00 · Gelato Artigianale 4,50
+
+## Enlaces
+
+- Web: https://urpito.github.io/Fratelli-d-Italia/
+- Contacto: hola@fratelliditalia.es

@@ -2,1937 +2,920 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fratelli d'Italia — Auténtica Pizzería Italiana en Madrid</title>
-  <meta name="description" content="Fratelli d'Italia: La auténtica pizza italiana artesanal en Madrid. Tres locales en Retiro, Chueca y Lavapiés. Reserva tu mesa o pide a domicilio.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fratelli d'Italia · Restaurante italiano y pizzería en Madrid (Retiro, Chueca, Lavapiés)</title>
+  <meta name="description" content="Restaurante italiano en Madrid fundado por dos cocineros, uno de Cerdeña y otro de las Marcas. Pizza al horno, pasta fresca y cannoli en Retiro y Chueca, y take away con envío a domicilio en Lavapiés.">
+  <link rel="canonical" href="https://urpito.github.io/Fratelli-d-Italia/">
+  <meta name="theme-color" content="#E9E0C9">
+  <link rel="icon" type="image/png" sizes="64x64" href="img/icon-64.png">
+  <link rel="apple-touch-icon" href="img/icon-180.png">
+
+  <meta property="og:type" content="restaurant.restaurant">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Fratelli d'Italia">
+  <meta property="og:title" content="Fratelli d'Italia · Restaurante italiano en Madrid">
+  <meta property="og:description" content="Dos cocineros, uno sardo y otro marchigiano. Tres direcciones en Madrid: Retiro, Chueca y Lavapiés.">
+  <meta property="og:url" content="https://urpito.github.io/Fratelli-d-Italia/">
+  <meta property="og:image" content="https://urpito.github.io/Fratelli-d-Italia/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/sofia-sans-extra-condensed.woff2" as="font" type="font/woff2" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://urpito.github.io/Fratelli-d-Italia/#marca",
+        "name": "Fratelli d'Italia",
+        "url": "https://urpito.github.io/Fratelli-d-Italia/",
+        "logo": "https://urpito.github.io/Fratelli-d-Italia/img/logo-garibaldi.png",
+        "email": "hola@fratelliditalia.es",
+        "description": "Grupo de restaurantes italianos en el centro de Madrid fundado por dos cocineros italianos, uno de Cerdeña (Sardegna) y otro de las Marcas (Marche).",
+        "subOrganization": [
+          {"@id": "https://urpito.github.io/Fratelli-d-Italia/#retiro"},
+          {"@id": "https://urpito.github.io/Fratelli-d-Italia/#chueca"},
+          {"@id": "https://urpito.github.io/Fratelli-d-Italia/#lavapies"}
+        ]
+      },
+      {
+        "@type": "Restaurant",
+        "@id": "https://urpito.github.io/Fratelli-d-Italia/#retiro",
+        "name": "Fratelli d'Italia Retiro",
+        "parentOrganization": {"@id": "https://urpito.github.io/Fratelli-d-Italia/#marca"},
+        "image": "https://urpito.github.io/Fratelli-d-Italia/img/local1.webp",
+        "servesCuisine": ["Italiana", "Pizza", "Pasta"],
+        "priceRange": "€€",
+        "acceptsReservations": true,
+        "telephone": "+34912345678",
+        "hasMenu": {"@id": "https://urpito.github.io/Fratelli-d-Italia/#carta"},
+        "address": {"@type": "PostalAddress", "streetAddress": "Calle de Antonio Arias, 4", "addressLocality": "Madrid", "postalCode": "28009", "addressRegion": "Madrid", "addressCountry": "ES"},
+        "geo": {"@type": "GeoCoordinates", "latitude": 40.417617, "longitude": -3.671579},
+        "openingHoursSpecification": [
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "13:00", "closes": "16:00"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "20:00", "closes": "23:00"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "13:00", "closes": "23:00"}
+        ]
+      },
+      {
+        "@type": "Restaurant",
+        "@id": "https://urpito.github.io/Fratelli-d-Italia/#chueca",
+        "name": "Fratelli d'Italia Chueca",
+        "parentOrganization": {"@id": "https://urpito.github.io/Fratelli-d-Italia/#marca"},
+        "image": "https://urpito.github.io/Fratelli-d-Italia/img/local2.webp",
+        "servesCuisine": ["Italiana", "Pizza", "Pasta"],
+        "priceRange": "€€",
+        "acceptsReservations": true,
+        "telephone": "+34912345679",
+        "hasMenu": {"@id": "https://urpito.github.io/Fratelli-d-Italia/#carta"},
+        "hasMap": "https://www.google.es/maps/place/Fratelli+d'Italia+Chueca+%7C+RISTORANTE+PIZZERIA/@40.4215883,-3.7026635,868m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!8m2!3d40.4215883!4d-3.7000886!16s%2Fg%2F11cs241b9r",
+        "address": {"@type": "PostalAddress", "streetAddress": "Calle de Hortaleza, 28", "addressLocality": "Madrid", "postalCode": "28004", "addressRegion": "Madrid", "addressCountry": "ES"},
+        "geo": {"@type": "GeoCoordinates", "latitude": 40.4215883, "longitude": -3.7000886},
+        "openingHoursSpecification": [
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "13:00", "closes": "16:00"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "20:00", "closes": "23:30"},
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday", "Sunday"], "opens": "13:00", "closes": "23:30"}
+        ]
+      },
+      {
+        "@type": "Restaurant",
+        "@id": "https://urpito.github.io/Fratelli-d-Italia/#lavapies",
+        "name": "Fratelli d'Italia Lavapiés (Take Away)",
+        "parentOrganization": {"@id": "https://urpito.github.io/Fratelli-d-Italia/#marca"},
+        "image": "https://urpito.github.io/Fratelli-d-Italia/img/local3.webp",
+        "servesCuisine": ["Italiana", "Pizza al taglio", "Cannoli"],
+        "priceRange": "€",
+        "acceptsReservations": false,
+        "telephone": "+34912345680",
+        "hasMenu": {"@id": "https://urpito.github.io/Fratelli-d-Italia/#carta"},
+        "potentialAction": {"@type": "OrderAction", "target": "https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid", "deliveryMethod": "http://purl.org/goodrelations/v1#DeliveryModeOwnFleet"},
+        "address": {"@type": "PostalAddress", "streetAddress": "Calle del Sombrerete, 1", "addressLocality": "Madrid", "postalCode": "28012", "addressRegion": "Madrid", "addressCountry": "ES"},
+        "openingHoursSpecification": [
+          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "13:00", "closes": "23:30"}
+        ]
+      },
+      {
+        "@type": "Menu",
+        "@id": "https://urpito.github.io/Fratelli-d-Italia/#carta",
+        "name": "Carta de Fratelli d'Italia",
+        "inLanguage": "es",
+        "hasMenuSection": [
+          {"@type": "MenuSection", "name": "Pizzas", "hasMenuItem": [
+            {"@type": "MenuItem", "name": "Marinara", "description": "Salsa de tomate, ajo, aceite de oliva y orégano.", "offers": {"@type": "Offer", "price": "13.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Diavola", "description": "Tomate, mozzarella, salame piccante calabrese, guindilla.", "offers": {"@type": "Offer", "price": "15.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Quattro Stagioni", "description": "Tomate, mozzarella, jamón cocido, alcachofas, aceitunas negras, champiñones.", "offers": {"@type": "Offer", "price": "16.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Burrata e Prosciutto", "description": "Base blanca, burrata fresca, prosciutto crudo 18 meses, rúcula, reducción de balsámico.", "offers": {"@type": "Offer", "price": "18.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Funghi Porcini", "description": "Base crema de trufa, mozzarella, porcini frescos, parmesano, tomillo.", "offers": {"@type": "Offer", "price": "17.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Verdure di Stagione", "description": "Tomate, mozzarella, pimientos asados, berenjenas, calabacín, rúcula.", "suitableForDiet": "https://schema.org/VegetarianDiet", "offers": {"@type": "Offer", "price": "14.50", "priceCurrency": "EUR"}}
+          ]},
+          {"@type": "MenuSection", "name": "Entrantes", "hasMenuItem": [
+            {"@type": "MenuItem", "name": "Bruschetta al Pomodoro", "offers": {"@type": "Offer", "price": "6.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Supplì alla Romana", "offers": {"@type": "Offer", "price": "8.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Tabla de Embutidos Italianos", "offers": {"@type": "Offer", "price": "14.00", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Burrata con Tomate", "offers": {"@type": "Offer", "price": "11.50", "priceCurrency": "EUR"}}
+          ]},
+          {"@type": "MenuSection", "name": "Pasta", "hasMenuItem": [
+            {"@type": "MenuItem", "name": "Spaghetti alla Carbonara", "offers": {"@type": "Offer", "price": "14.00", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Rigatoni all'Amatriciana", "offers": {"@type": "Offer", "price": "13.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Paccheri al Ragù Napoletano", "offers": {"@type": "Offer", "price": "15.00", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Tagliatelle al Pesto Genovese", "offers": {"@type": "Offer", "price": "13.00", "priceCurrency": "EUR"}}
+          ]},
+          {"@type": "MenuSection", "name": "Postres", "hasMenuItem": [
+            {"@type": "MenuItem", "name": "Cannoli Siciliani", "offers": {"@type": "Offer", "price": "5.00", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Tiramisù Casero", "offers": {"@type": "Offer", "price": "6.50", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Panna Cotta al Pistacchio", "offers": {"@type": "Offer", "price": "6.00", "priceCurrency": "EUR"}},
+            {"@type": "MenuItem", "name": "Gelato Artigianale", "offers": {"@type": "Offer", "price": "4.50", "priceCurrency": "EUR"}}
+          ]}
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
-    /* ===========================
-       CSS VARIABLES & RESET
-    =========================== */
+    @font-face { font-family: "Bodoni Moda"; font-style: normal; font-weight: 400 900; font-display: swap; src: url(fonts/bodoni-moda.woff2) format("woff2"); }
+    @font-face { font-family: "Bodoni Moda"; font-style: italic; font-weight: 400 900; font-display: swap; src: url(fonts/bodoni-moda-italic.woff2) format("woff2"); }
+    @font-face { font-family: "Sofia Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url(fonts/sofia-sans.woff2) format("woff2"); }
+    @font-face { font-family: "Sofia Sans"; font-style: italic; font-weight: 400; font-display: swap; src: url(fonts/sofia-sans-italic.woff2) format("woff2"); }
+    @font-face { font-family: "Sofia Sans Extra Condensed"; font-style: normal; font-weight: 500 900; font-display: swap; src: url(fonts/sofia-sans-extra-condensed.woff2) format("woff2"); }
+
+    /* ---------- Tokens: carta da manifesto ---------- */
     :root {
-      --red:        #C0392B;
-      --red-dark:   #9B2335;
-      --red-light:  #E74C3C;
-      --green:      #2D6A4F;
-      --green-light:#40916C;
-      --cream:      #FDF6EC;
-      --cream-dark: #F5E8D0;
-      --wood:       #8B5E3C;
-      --wood-light: #C48A5A;
-      --copper:     #B87333;
-      --gold:       #D4AF37;
-      --charcoal:   #2C2C2C;
-      --text:       #3D2B1F;
-      --text-light: #7A5C48;
-      --white:      #FFFFFF;
+      --paper:      #E9E0C9;   /* papel de cartel */
+      --paper-deep: #DCD0B3;
+      --ink:        #17130F;   /* tinta de imprenta */
+      --ink-soft:   #4A4034;
+      --vermilion:  #B32416;   /* hoja bermellón */
+      --vermilion-deep: #8E1A0F;
+      --vermilion-lit: #E5452F;   /* bermellón sobre tinta */
+      --green:      #1C5737;   /* hoja garibaldina */
+      --green-deep: #133F27;
+      --yellow:     #E6B832;   /* carta gialla del listino */
+      --on-red:     #F6EBD6;
+      --on-red-soft:#F6E0D2;
+      --on-green-soft: #CFE0CF;
 
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans:  'Lato', system-ui, sans-serif;
+      --display: "Bodoni Moda", "Didot", serif;
+      --wood:    "Sofia Sans Extra Condensed", "Arial Narrow", sans-serif;
+      --text:    "Sofia Sans", system-ui, sans-serif;
 
-      --radius: 4px;
-      --shadow: 0 4px 24px rgba(44,28,20,0.12);
-      --shadow-lg: 0 12px 48px rgba(44,28,20,0.18);
+      --gutter: clamp(1rem, 4vw, 3.5rem);
+      --measure: 62ch;
+      --ease-out: cubic-bezier(.16, 1, .3, 1);
+      --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.07 0 0 0 0 0.05 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; -webkit-text-size-adjust: 100%; }
     body {
-      font-family: var(--font-sans);
-      color: var(--text);
-      background: var(--cream);
-      overflow-x: hidden;
+      font-family: var(--text);
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: var(--ink);
+      background: var(--paper);
+      caret-color: var(--vermilion);
     }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    ::selection { background: var(--vermilion); color: var(--on-red); }
+    :focus-visible { outline: 3px solid var(--vermilion); outline-offset: 3px; }
+    html { scrollbar-color: var(--ink-soft) var(--paper-deep); }
 
-    img { display: block; max-width: 100%; }
+    .skip { position: absolute; left: 1rem; top: 0; z-index: 200; background: var(--ink); color: var(--paper); padding: .75rem 1rem; transform: translateY(-120%); }
+    .skip:focus { transform: translateY(1rem); }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* ===========================
-       TYPOGRAPHY
-    =========================== */
-    .serif { font-family: var(--font-serif); }
-
-    h1, h2, h3 { font-family: var(--font-serif); line-height: 1.15; }
-
-    .section-label {
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--copper);
-      display: block;
-      margin-bottom: 0.75rem;
+    /* Cada sección es una hoja pegada a la pared */
+    .sheet { position: relative; isolation: isolate; padding: clamp(4rem, 9vw, 7.5rem) var(--gutter); }
+    .sheet::before {
+      content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background-image: var(--grain); opacity: .22; mix-blend-mode: multiply;
     }
+    .sheet + .sheet { border-top: 1px solid var(--ink); }
+    .sheet--red    { background: var(--vermilion); color: var(--on-red); }
+    .sheet--green  { background: var(--green); color: var(--on-red); }
+    .sheet--yellow { background: var(--yellow); }
+    .sheet--ink    { background: var(--ink); color: var(--paper); }
+    .sheet--ink::before, .sheet--green::before { mix-blend-mode: screen; opacity: .06; }
+    .wrap { max-width: 1240px; margin-inline: auto; }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      color: var(--charcoal);
-      margin-bottom: 1.25rem;
+    /* Regla doble de cartel: gruesa + fina */
+    .rule { border: 0; height: 7px; border-top: 4px solid currentColor; border-bottom: 1px solid currentColor; margin: 0; }
+
+    /* ---------- Tipografía ---------- */
+    .wood {
+      font-family: var(--wood); font-weight: 800; text-transform: uppercase;
+      letter-spacing: .04em; line-height: .95;
     }
-
-    .section-sub {
-      font-size: 1.05rem;
-      color: var(--text-light);
-      line-height: 1.75;
-      max-width: 58ch;
+    .h-section {
+      font-family: var(--display); font-weight: 900; font-variation-settings: "opsz" 96;
+      font-size: clamp(2.6rem, 6.4vw, 5.5rem); line-height: .95; letter-spacing: -.02em;
+      text-wrap: balance;
     }
+    .h-section em { font-style: normal; font-weight: 400; }
+    .lede { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; max-width: var(--measure); text-wrap: pretty; }
 
-    /* ===========================
-       LAYOUT UTILS
-    =========================== */
-    .container {
-      width: 90%;
-      max-width: 1160px;
-      margin-inline: auto;
+    /* ---------- Botones como talones de entrada ---------- */
+    .ticket {
+      --t-bg: var(--vermilion); --t-fg: var(--on-red);
+      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: .75rem;
+      min-height: 3.5rem; padding: .9rem 1.75rem;
+      background: var(--t-bg); color: var(--t-fg);
+      font-family: var(--wood); font-weight: 800; font-size: 1.3rem; letter-spacing: .06em; text-transform: uppercase; line-height: 1;
+      text-decoration: none; border: 0; cursor: pointer;
+      /* muescas de talón en los costados */
+      -webkit-mask: radial-gradient(circle 7px at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat,
+                    radial-gradient(circle 7px at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
+              mask: radial-gradient(circle 7px at 0 50%, #0000 98%, #000) left / 51% 100% no-repeat,
+                    radial-gradient(circle 7px at 100% 50%, #0000 98%, #000) right / 51% 100% no-repeat;
+      transition: background-color .2s var(--ease-out), transform .2s var(--ease-out);
     }
+    .ticket::after { content: ""; position: absolute; inset: 5px 14px; border: 1px dashed currentColor; opacity: .55; pointer-events: none; }
+    .ticket:hover { background: var(--vermilion-deep); transform: translateY(-2px); }
+    .ticket:active { transform: translateY(0); }
+    .ticket--ink   { --t-bg: var(--ink); --t-fg: var(--paper); }
+    .ticket--ink:hover { background: #000; }
+    .ticket--paper { --t-bg: var(--paper); --t-fg: var(--ink); }
+    .ticket--paper:hover { background: #fff8e6; }
+    .ticket--sm { min-height: 2.9rem; font-size: 1.05rem; padding: .7rem 1.3rem; }
+    .ticket svg { flex: none; }
 
-    .section {
-      padding: 7rem 0;
+    .textlink {
+      font-family: var(--wood); font-weight: 700; font-size: 1.1rem; letter-spacing: .06em; text-transform: uppercase;
+      text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .3em;
     }
+    .textlink:hover { text-decoration-color: var(--vermilion); }
 
-    .section--alt {
-      background: var(--cream-dark);
+    /* ---------- Cabecera ---------- */
+    .masthead {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--paper); border-bottom: 1px solid var(--ink);
+      padding: .55rem var(--gutter);
     }
-
-    /* ===========================
-       BUTTONS
-    =========================== */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.85rem 2rem;
-      border-radius: var(--radius);
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 0.9rem;
-      letter-spacing: 0.05em;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      border: 2px solid transparent;
+    .masthead__inner { max-width: 1240px; margin-inline: auto; display: flex; align-items: center; gap: 1.5rem; }
+    .brand { display: flex; align-items: center; gap: .6rem; text-decoration: none; margin-right: auto; }
+    .brand img { width: 30px; height: auto; }
+    .brand span { font-family: var(--display); font-weight: 800; font-size: 1.35rem; letter-spacing: -.01em; white-space: nowrap; }
+    .nav { display: flex; gap: 1.75rem; list-style: none; }
+    .nav a { font-family: var(--wood); font-weight: 700; font-size: 1.15rem; letter-spacing: .07em; text-transform: uppercase; text-decoration: none; padding-block: .4rem; background: linear-gradient(currentColor, currentColor) left bottom / 0 2px no-repeat; transition: background-size .3s var(--ease-out); }
+    .nav a:hover { background-size: 100% 2px; }
+    .menu-btn {
+      display: none; align-items: center; gap: .5rem; background: none; border: 1px solid var(--ink); color: var(--ink);
+      font-family: var(--wood); font-weight: 800; font-size: 1.05rem; letter-spacing: .08em; text-transform: uppercase;
+      padding: .45rem .8rem; cursor: pointer; min-height: 44px;
     }
-
-    .btn-primary {
-      background: var(--red);
-      color: var(--white);
-      border-color: var(--red);
+    .drawer {
+      position: fixed; inset: 0; z-index: 150; background: var(--vermilion); color: var(--on-red);
+      padding: 1.25rem var(--gutter) 2rem; display: flex; flex-direction: column; gap: 2rem;
+      transform: translateY(-100%); visibility: hidden;
+      transition: transform .45s var(--ease-out), visibility 0s .45s;
     }
+    .drawer.open { transform: none; visibility: visible; transition: transform .45s var(--ease-out); }
+    .drawer__top { display: flex; justify-content: space-between; align-items: center; }
+    .drawer__top .menu-btn { display: inline-flex; border-color: var(--on-red); color: var(--on-red); }
+    .drawer nav { display: flex; flex-direction: column; }
+    .drawer nav a { font-family: var(--display); font-weight: 900; font-size: clamp(2.6rem, 12vw, 4rem); line-height: 1.1; text-decoration: none; border-bottom: 1px solid rgba(246,235,214,.35); padding-block: .4rem; }
+    .drawer .ticket { align-self: flex-start; }
 
-    .btn-primary:hover {
-      background: var(--red-dark);
-      border-color: var(--red-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(192,57,43,0.35);
+    /* ---------- Cartel principal ---------- */
+    .hero { padding-top: clamp(2rem, 4vw, 3rem); padding-bottom: 0; }
+    .hero__grid {
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 36%);
+      grid-template-areas: "text logo" "foot foot"; column-gap: clamp(1.5rem, 4vw, 4rem); align-items: end;
     }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--white);
-      border-color: rgba(255,255,255,0.7);
-    }
-
-    .btn-outline:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: var(--white);
-      transform: translateY(-2px);
-    }
-
-    .btn-dark {
-      background: var(--charcoal);
-      color: var(--white);
-      border-color: var(--charcoal);
-    }
-
-    .btn-dark:hover {
-      background: var(--text);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(44,28,20,0.3);
-    }
-
-    /* ===========================
-       NAVBAR
-    =========================== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      padding: 1.2rem 0;
-      transition: all 0.4s ease;
-    }
-
-    .navbar.scrolled {
-      background: rgba(253,246,236,0.96);
-      backdrop-filter: blur(12px);
-      box-shadow: 0 2px 20px rgba(44,28,20,0.1);
-      padding: 0.75rem 0;
-    }
-
-    .navbar__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .navbar__logo {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-
-    .navbar__logo .logo-main {
-      font-family: var(--font-serif);
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--white);
-      transition: color 0.4s;
-    }
-
-    .navbar__logo .logo-sub {
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      transition: color 0.4s;
-      margin-top: 2px;
-    }
-
-    .navbar.scrolled .logo-main { color: var(--red); }
-    .navbar.scrolled .logo-sub  { color: var(--copper); }
-
-    .navbar__nav {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .navbar__nav a {
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-      transition: color 0.25s;
-    }
-
-    .navbar.scrolled .navbar__nav a { color: var(--text); }
-
-    .navbar__nav a:hover { color: var(--red); }
-
-    .navbar__cta {
-      background: var(--red);
-      color: var(--white);
-      padding: 0.6rem 1.4rem;
-      border-radius: var(--radius);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      transition: all 0.25s;
-    }
-
-    .navbar__cta:hover {
-      background: var(--red-dark);
-      transform: translateY(-1px);
-    }
-
-    .burger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-    }
-
-    .burger span {
-      width: 26px;
-      height: 2px;
-      background: var(--white);
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
-
-    .navbar.scrolled .burger span { background: var(--charcoal); }
-
-    /* ===========================
-       HERO
-    =========================== */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .hero__bg {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, rgba(44,28,20,0.75) 0%, rgba(155,35,53,0.45) 60%, rgba(44,28,20,0.65) 100%),
-        url('frfo.png') center/cover no-repeat;
-      transform: scale(1.04);
-      animation: heroZoom 14s ease-out forwards;
-    }
-
-    @keyframes heroZoom {
-      to { transform: scale(1); }
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 2;
-      padding-top: 6rem;
-    }
-
-    .hero__flag {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.8s 0.3s both;
-    }
-
-    .hero__flag span {
-      width: 32px;
-      height: 5px;
-      border-radius: 2px;
-    }
-
-    .hero__eyebrow {
-      font-size: 0.75rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 1rem;
-      animation: fadeUp 0.8s 0.4s both;
-    }
-
+    .hero__text { grid-area: text; padding-bottom: clamp(2rem, 4vw, 3rem); align-self: stretch; padding-top: clamp(1rem, 5vw, 4.5rem); display: flex; flex-direction: column; }
+    .hero__logo { grid-area: logo; align-self: end; justify-self: center; position: relative; }
+    .hero__logo img { width: 100%; max-width: 380px; max-height: min(66vh, 640px); object-fit: contain; object-position: bottom; }
     .hero__title {
-      font-size: clamp(2.8rem, 6vw, 5.5rem);
-      color: var(--white);
-      max-width: 14ch;
-      line-height: 1.08;
-      margin-bottom: 0.5rem;
-      animation: fadeUp 0.8s 0.5s both;
+      font-family: var(--display); font-weight: 900; font-variation-settings: "opsz" 96;
+      font-size: clamp(3.4rem, 8.6vw, 6rem); line-height: .86; letter-spacing: -.035em;
+      margin: 0 0 1.5rem; position: relative; isolation: isolate;
     }
-
-    .hero__title em {
-      font-style: italic;
-      color: var(--cream-dark);
+    /* Sobreimpresión: plancha bermellón desregistrada bajo la tinta negra */
+    .hero__title::before {
+      content: "Fratelli\A d’Italia" / ""; white-space: pre; position: absolute; inset: 0; z-index: -1;
+      color: var(--vermilion); opacity: .85; transform: translate(.045em, .03em); mix-blend-mode: multiply; pointer-events: none;
     }
+    
+    .hero__motto { font-size: clamp(1.45rem, 2.6vw, 2.1rem); color: var(--vermilion); }
+    .hero__motto b { color: var(--ink); font-weight: 800; }
+    .hero__lede { margin-top: 1.5rem; }
+    .hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: auto; padding-top: 2rem; }
 
-    .hero__sub {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.8);
-      max-width: 46ch;
-      line-height: 1.7;
-      margin: 1.5rem 0 2.5rem;
-      animation: fadeUp 0.8s 0.65s both;
+    .quarters { grid-area: foot; border-top: 4px solid var(--ink); }
+    .quarters ol { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .quarters li + li { border-left: 1px solid var(--ink); }
+    .quarters a {
+      display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: .9rem;
+      padding: 1.1rem 1.1rem 1.25rem; text-decoration: none; height: 100%;
+      transition: background-color .25s var(--ease-out);
     }
+    .quarters a:hover { background: var(--paper-deep); }
+    .quarters .q-name { font-family: var(--wood); font-weight: 900; font-size: clamp(1.7rem, 3vw, 2.4rem); letter-spacing: .02em; text-transform: uppercase; line-height: 1; grid-column: 1 / -1; }
+    .quarters .q-kind { font-size: .95rem; color: var(--ink-soft); }
 
-    .hero__actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      animation: fadeUp 0.8s 0.8s both;
+    /* Sello de estado en vivo */
+    .status {
+      display: inline-flex; flex-direction: column; align-items: flex-start; justify-self: start; align-self: start;
+      border: 2px solid currentColor; outline: 1px solid currentColor; outline-offset: 2px;
+      padding: .3rem .6rem .35rem; transform: rotate(-2deg); transform-origin: left center; margin-left: .3rem;
+      font-family: var(--wood); text-transform: uppercase; line-height: 1;
     }
+    .status b { font-weight: 900; font-size: 1.35rem; letter-spacing: .08em; }
+    .status small { font-weight: 700; font-size: .92rem; letter-spacing: .05em; margin-top: .15rem; }
+    .status[data-open="true"]  { color: var(--green); }
+    .status[data-open="false"] { color: var(--vermilion); }
+    .quarters .status { grid-column: 1 / -1; margin-top: .7rem; }
 
-    .hero__scroll {
-      position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      color: rgba(255,255,255,0.6);
-      font-size: 0.7rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
+    /* ---------- Proclama (historia) ---------- */
+    .procl__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; max-width: 980px; }
+    .procl__head .h-section { color: var(--on-red); }
+    .procl__head .lede { color: var(--on-red-soft); }
+    .duo { display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(1rem, 3vw, 2.5rem); align-items: start; margin-top: clamp(3rem, 6vw, 4.5rem); }
+    .duo__col h3 { font-size: clamp(2.6rem, 5vw, 4rem); }
+    .duo__col .origin { font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--on-red-soft); margin: .5rem 0 1rem; }
+    .duo__col p:last-child { max-width: 44ch; color: var(--on-red); }
+    .duo__plus { font-family: var(--display); font-style: italic; font-weight: 700; font-size: clamp(4rem, 9vw, 7rem); line-height: .8; color: var(--on-red); }
+    .duo__sum { grid-column: 1 / -1; border-top: 1px solid rgba(246,235,214,.5); padding-top: 1.75rem; display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center; flex-wrap: nowrap; }
+    .duo__sum p { flex: 1; }
+    .duo__sum .eq { font-family: var(--wood); font-weight: 900; font-size: clamp(3.5rem, 7vw, 5.5rem); line-height: .7; color: var(--on-red); }
+    .duo__sum p { font-family: var(--display); font-size: clamp(1.4rem, 2.6vw, 2rem); font-style: italic; line-height: 1.3; max-width: 36ch; }
 
-    .hero__scroll .arrow {
-      width: 20px;
-      height: 20px;
-      border-right: 2px solid rgba(255,255,255,0.5);
-      border-bottom: 2px solid rgba(255,255,255,0.5);
-      transform: rotate(45deg);
-      animation: arrowBounce 1.5s infinite;
-    }
+    .fleuron { display: block; width: min(420px, 80%); height: auto; margin: clamp(3rem, 6vw, 4.5rem) auto 0; color: var(--on-red); }
+    .articles { list-style: none; margin-top: clamp(2rem, 4vw, 3rem); display: grid; grid-template-columns: repeat(4, 1fr); border-top: 4px solid var(--ink); }
+    .articles li { padding: 1.25rem 1.25rem 0 0; }
+    .articles li + li { padding-left: 1.25rem; border-left: 1px solid rgba(23,19,15,.45); }
+    .articles h3 { font-family: var(--wood); font-weight: 800; font-size: 1.6rem; text-transform: uppercase; letter-spacing: .03em; line-height: 1; margin: 0 0 .6rem; color: var(--on-red); }
+    .articles p { font-size: .98rem; color: var(--on-red-soft); }
 
-    @keyframes arrowBounce {
-      0%, 100% { transform: rotate(45deg) translateY(0); }
-      50%       { transform: rotate(45deg) translateY(5px); }
-    }
+    /* ---------- Láminas (galería) ---------- */
+    .plates { padding-block: clamp(3rem, 6vw, 4.5rem); overflow-x: clip; }
+    .plates__row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(.75rem, 1.6vw, 1.5rem); max-width: 1400px; margin-inline: auto; }
+    .plate { background: #F7F1E2; padding: .6rem .6rem .75rem; box-shadow: 0 1px 1px rgba(23,19,15,.18), 0 10px 24px -12px rgba(23,19,15,.45); }
+    .plate:nth-child(odd)  { transform: rotate(-.8deg); }
+    .plate:nth-child(even) { transform: rotate(.6deg) translateY(.75rem); }
+    .plate img { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; filter: saturate(1.05) contrast(1.03); }
+    .plate figcaption { font-family: var(--display); font-style: italic; font-size: .98rem; margin-top: .5rem; line-height: 1.2; }
+    .plate figcaption b { font-style: normal; font-family: var(--wood); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: .85rem; margin-right: .35rem; color: var(--vermilion); }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+    /* ---------- Locales ---------- */
+    .loc__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 1.5rem 3rem; }
+    .loc__head .lede { color: var(--on-green-soft); max-width: 46ch; }
+    .bills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1rem, 2.4vw, 2rem); margin-top: clamp(2.5rem, 5vw, 4rem); align-items: start; }
+    .bill { background: var(--paper); color: var(--ink); position: relative; isolation: isolate; padding: 0 0 1.5rem; scroll-margin-top: 5rem; }
+    .bill::before { content: ""; position: absolute; inset: 0; z-index: -1; background-image: var(--grain); opacity: .2; mix-blend-mode: multiply; pointer-events: none; }
+    .bill__img { aspect-ratio: 4 / 3; width: calc(100% - 1.2rem); margin: .6rem .6rem 0; object-fit: cover; }
+    .bill__body { padding: 1.25rem 1.4rem 0; }
+    .bill__name { font-family: var(--wood); font-weight: 900; font-size: clamp(2.6rem, 4.2vw, 3.6rem); line-height: .9; text-transform: uppercase; letter-spacing: .01em; margin: .2rem 0 .6rem; }
+    .bill__tag { font-size: .98rem; color: var(--ink-soft); margin-bottom: 1rem; }
+    .bill .status { margin-bottom: 1rem; }
+    .facts { display: grid; grid-template-columns: auto 1fr; gap: .45rem 1rem; padding-block: 1rem; border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); font-size: .98rem; }
+    .facts dt { font-family: var(--wood); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; font-size: .95rem; padding-top: .1rem; }
+    .facts dd a { text-underline-offset: .2em; }
+    .facts .hours { font-variant-numeric: tabular-nums lining-nums; }
+    .bill__actions { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.4rem; margin-top: 1.25rem; }
 
-    /* ===========================
-       STRIP (trust bar)
-    =========================== */
-    .strip {
-      background: var(--red);
-      padding: 1rem 0;
-    }
-
-    .strip__inner {
-      display: flex;
-      justify-content: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .strip__item {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      color: var(--white);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .strip__item svg { flex-shrink: 0; }
-
-    /* ===========================
-       ABOUT
-    =========================== */
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
-    }
-
-    .about__visual {
-      position: relative;
-    }
-
-    .about__img-main {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 2px;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .about__img-accent {
-      position: absolute;
-      bottom: -2.5rem;
-      right: -2.5rem;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 2px;
-      border: 6px solid var(--cream);
-      box-shadow: var(--shadow);
-    }
-
-    .about__badge {
-      position: absolute;
-      top: -1.5rem;
-      left: -1.5rem;
-      width: 110px;
-      height: 110px;
-      background: var(--red);
-      border-radius: 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      text-align: center;
-      box-shadow: var(--shadow);
-    }
-
-    .about__badge .year {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .about__badge .since {
-      font-size: 0.6rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      opacity: 0.85;
-    }
-
-    .about__text { padding-right: 1rem; }
-
-    .about__pillars {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-top: 2.5rem;
-    }
-
-    .pillar {
-      padding: 1.25rem;
-      background: var(--white);
-      border-radius: var(--radius);
-      border-left: 3px solid var(--red);
-    }
-
-    .pillar__icon {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .pillar h4 {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .pillar p {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      line-height: 1.6;
-    }
-
-    /* ===========================
-       LOCATIONS
-    =========================== */
-    .locations__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 2rem;
-      margin-top: 3.5rem;
-    }
-
-    .location-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .location-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .location-card__img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .location-card__badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.75rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
-
-    .badge--restaurante {
-      background: rgba(45,106,79,0.12);
-      color: var(--green);
-    }
-
-    .badge--takeaway {
-      background: rgba(192,57,43,0.1);
-      color: var(--red);
-    }
-
-    .location-card__body {
-      padding: 1.75rem;
-    }
-
-    .location-card__name {
-      font-size: 1.5rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .location-card__tagline {
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-style: italic;
-      margin-bottom: 1.25rem;
-    }
-
-    .location-card__info {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .location-card__info li {
-      display: flex;
-      gap: 0.6rem;
-      align-items: flex-start;
-      font-size: 0.85rem;
-      color: var(--text);
-    }
-
-    .location-card__info li svg {
-      flex-shrink: 0;
-      color: var(--copper);
-      margin-top: 2px;
-    }
-
-    .location-card__actions {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-sm {
-      padding: 0.55rem 1.1rem;
-      font-size: 0.78rem;
-    }
-
-    .btn-green {
-      background: var(--green);
-      color: var(--white);
-      border-color: var(--green);
-    }
-
-    .btn-green:hover {
-      background: var(--green-light);
-      transform: translateY(-1px);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: var(--text);
-      border: 2px solid rgba(44,28,20,0.2);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--red);
-      color: var(--red);
-    }
-
-    /* ===========================
-       MENU
-    =========================== */
-    .menu__tabs {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 3rem;
-      border-bottom: 2px solid var(--cream-dark);
-      padding-bottom: 0;
-      flex-wrap: wrap;
-    }
-
+    /* ---------- Carta (listino) ---------- */
+    .menu__head { text-align: center; max-width: 820px; margin-inline: auto; }
+    .menu__head .lede { margin: 1.25rem auto 0; color: #3A2F12; }
+    .tabs { display: flex; justify-content: center; flex-wrap: wrap; margin: clamp(2.5rem, 5vw, 3.5rem) auto 0; border-top: 4px solid var(--ink); border-bottom: 1px solid var(--ink); max-width: 980px; }
     .tab {
-      padding: 0.75rem 1.5rem;
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      border: none;
-      background: none;
-      color: var(--text-light);
-      border-bottom: 3px solid transparent;
-      margin-bottom: -2px;
-      transition: all 0.2s;
+      font-family: var(--wood); font-weight: 800; font-size: clamp(1.25rem, 2.4vw, 1.6rem); letter-spacing: .06em; text-transform: uppercase;
+      background: none; border: 0; color: var(--ink); padding: .8rem clamp(.9rem, 2.4vw, 1.8rem); cursor: pointer; min-height: 48px;
+      transition: background-color .2s var(--ease-out), color .2s var(--ease-out);
+    }
+    .tab:hover { background: rgba(23,19,15,.08); }
+    .tab[aria-selected="true"] { background: var(--ink); color: var(--yellow); }
+    .panel { max-width: 980px; margin: 0 auto; columns: 2; column-gap: 3.5rem; padding-top: 1.5rem; }
+    .panel[hidden] { display: none; }
+    .dish { break-inside: avoid; padding: 1rem 0; border-bottom: 1px dotted rgba(23,19,15,.5); }
+    .dish__line { display: flex; align-items: baseline; gap: .5rem; }
+    .dish__name { font-family: var(--display); font-weight: 800; font-size: 1.35rem; line-height: 1.15; }
+    .dish__dots { flex: 1; border-bottom: 2px dotted var(--ink); transform: translateY(-.3em); min-width: 1.5rem; }
+    .dish__price { font-family: var(--wood); font-weight: 800; font-size: 1.55rem; letter-spacing: .02em; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+    .dish__desc { font-size: .98rem; color: #3A2F12; margin-top: .25rem; max-width: 52ch; }
+    .dish__mark { display: inline-block; font-family: var(--display); font-style: italic; font-size: .95rem; color: var(--vermilion-deep); margin-top: .3rem; }
+    .menu__note { max-width: 980px; margin: 2.25rem auto 0; font-family: var(--display); font-style: italic; font-size: 1.05rem; color: #3A2F12; text-align: center; text-wrap: balance; }
+
+    /* ---------- Reseñas (recortes) ---------- */
+    .voices__grid { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: clamp(1.5rem, 3vw, 3rem); margin-top: clamp(2.5rem, 5vw, 3.5rem); align-items: start; }
+    .voice { border-top: 4px solid var(--ink); padding-top: 1.25rem; }
+    .voice blockquote p { font-family: var(--display); font-variation-settings: "opsz" 36; font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.35; font-style: italic; text-wrap: pretty; }
+    .voice:first-child blockquote p { font-size: clamp(1.5rem, 2.6vw, 2.1rem); font-style: normal; font-weight: 600; line-height: 1.3; }
+    .voice figcaption { margin-top: 1rem; font-family: var(--wood); font-weight: 700; font-size: 1.05rem; letter-spacing: .06em; text-transform: uppercase; }
+    .voice figcaption span { display: block; font-family: var(--text); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: .95rem; color: var(--ink-soft); }
+    .stars { color: var(--vermilion); display: flex; gap: 2px; margin-bottom: .75rem; }
+
+    /* ---------- Aviso final (reservar / pedir) ---------- */
+    .notice__title { font-family: var(--display); font-weight: 900; font-variation-settings: "opsz" 96; font-size: clamp(3.2rem, 9vw, 6rem); line-height: .9; letter-spacing: -.03em; color: var(--paper); }
+    .notice__title em { color: var(--vermilion-lit); font-style: normal; }
+    .notice__lede { color: #CFC5AF; margin-top: 1.25rem; }
+    .orders { display: grid; grid-template-columns: 1fr 1fr; margin-top: clamp(2.5rem, 5vw, 3.5rem); border-top: 4px solid var(--paper); }
+    .order { padding: 1.75rem 2rem 0 0; }
+    .order + .order { padding-left: 2rem; border-left: 1px solid rgba(233,224,201,.35); }
+    .order h3 { font-family: var(--wood); font-weight: 900; font-size: 2.2rem; text-transform: uppercase; letter-spacing: .03em; line-height: 1; }
+    .order p { color: #CFC5AF; margin: .6rem 0 1.4rem; max-width: 42ch; }
+    .order__btns { display: flex; flex-wrap: wrap; gap: .8rem; }
+
+    /* ---------- Pie ---------- */
+    .foot { background: var(--ink); color: #CFC5AF; padding: 0 var(--gutter) 2.5rem; font-size: .98rem; }
+    .foot .wrap { border-top: 1px solid rgba(233,224,201,.3); padding-top: 3rem; display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 2.5rem; }
+    .foot__brand { display: flex; gap: 1.1rem; align-items: flex-start; }
+    .seal { flex: none; width: 76px; background: var(--paper); padding: 6px 6px 0; }
+    .foot__brand strong { display: block; font-family: var(--display); font-weight: 800; font-size: 1.5rem; color: var(--paper); line-height: 1.1; margin-bottom: .4rem; }
+    .foot h2 { font-family: var(--wood); font-weight: 800; font-size: 1.15rem; letter-spacing: .08em; text-transform: uppercase; color: var(--paper); margin-bottom: .75rem; }
+    .foot ul { list-style: none; display: grid; gap: .45rem; }
+    .foot a { text-decoration: none; }
+    .foot a:hover { color: var(--paper); text-decoration: underline; text-underline-offset: .2em; }
+    .foot__legal { max-width: 1240px; margin: 2.5rem auto 0; font-size: .88rem; color: #9C927E; }
+
+    /* ---------- Movimiento: el cartel se pega una vez ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      .js .hero__title, .js .hero__motto, .js .hero__logo img {
+        animation: paste 1.1s var(--ease-out) both;
+      }
+      .js .hero__motto { animation-delay: .15s; }
+      .js .hero__logo img { animation-delay: .25s; animation-duration: 1.4s; }
+      @keyframes paste {
+        from { clip-path: inset(0 0 100% 0); transform: translateY(-.6rem); }
+        to   { clip-path: inset(0 0 0 0); transform: none; }
+      }
+      .status.stamped { animation: stamp .5s var(--ease-out) both; }
+      @keyframes stamp { from { opacity: 0; transform: rotate(-6deg) scale(1.25); } to { opacity: 1; transform: rotate(-2deg) scale(1); } }
     }
 
-    .tab.active, .tab:hover {
-      color: var(--red);
-      border-bottom-color: var(--red);
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1080px) {
+      .articles { grid-template-columns: repeat(2, 1fr); }
+      .articles li:nth-child(3) { padding-left: 0; border-left: 0; }
+      .articles li:nth-child(n+3) { margin-top: 1.5rem; }
+      .plates__row { grid-template-columns: repeat(5, 62%); overflow-x: auto; scroll-snap-type: x mandatory; padding: .5rem var(--gutter) 1.75rem; scrollbar-width: thin; }
+      .plates { padding-inline: 0; }
+      .plate { scroll-snap-align: center; }
+      .bills { grid-template-columns: 1fr; max-width: 640px; margin-inline: auto; }
+      .voices__grid { grid-template-columns: 1fr; max-width: 680px; }
     }
-
-    .menu-panel { display: none; }
-    .menu-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--cream-dark); }
-
-    .menu-item {
-      background: var(--white);
-      padding: 1.5rem;
-      display: flex;
-      gap: 1rem;
-      transition: background 0.2s;
+    @media (max-width: 820px) {
+      .nav, .masthead .ticket { display: none; }
+      .menu-btn { display: inline-flex; }
+      .hero__grid { grid-template-columns: minmax(0, 1fr) 34vw; grid-template-areas: "text logo" "foot foot"; }
+      .hero__logo img { max-height: 46vh; }
+      .quarters ol { grid-template-columns: 1fr; }
+      .quarters li + li { border-left: 0; border-top: 1px solid var(--ink); }
+      .quarters a { grid-template-columns: 1fr auto; align-items: baseline; padding: .9rem 0; }
+      .quarters .q-name { grid-column: auto; }
+      .quarters .q-kind { text-align: right; }
+      .duo { grid-template-columns: 1fr; }
+      .duo__plus { font-size: 4.5rem; }
+      .panel { columns: 1; }
+      .orders { grid-template-columns: 1fr; }
+      .order { padding-right: 0; }
+      .order + .order { padding-left: 0; border-left: 0; border-top: 1px solid rgba(233,224,201,.35); margin-top: 2rem; }
+      .foot .wrap { grid-template-columns: 1fr; }
     }
-
-    .menu-item:hover { background: #fdf0e6; }
-
-    .menu-item__info { flex: 1; }
-
-    .menu-item__name {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .menu-item__desc {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      line-height: 1.55;
-    }
-
-    .menu-item__meta {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 0.4rem;
-      flex-shrink: 0;
-    }
-
-    .menu-item__price {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--red);
-    }
-
-    .menu-tag {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.2rem 0.5rem;
-      border-radius: 20px;
-    }
-
-    .tag--star { background: rgba(212,175,55,0.15); color: var(--gold); }
-    .tag--new  { background: rgba(45,106,79,0.12); color: var(--green); }
-    .tag--veg  { background: rgba(45,106,79,0.08); color: var(--green-light); }
-
-    .menu__note {
-      margin-top: 2rem;
-      padding: 1rem 1.5rem;
-      background: rgba(192,57,43,0.06);
-      border-left: 3px solid var(--red);
-      border-radius: var(--radius);
-      font-size: 0.85rem;
-      color: var(--text-light);
-      font-style: italic;
-    }
-
-    /* ===========================
-       CTA / RESERVAS
-    =========================== */
-    .reservas {
-      background:
-        linear-gradient(135deg, rgba(44,28,20,0.88) 0%, rgba(155,35,53,0.78) 100%),
-        url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=80') center/cover no-repeat;
-      padding: 7rem 0;
-      text-align: center;
-    }
-
-    .reservas__title {
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      color: var(--white);
-      margin-bottom: 1rem;
-    }
-
-    .reservas__sub {
-      font-size: 1.05rem;
-      color: rgba(255,255,255,0.75);
-      max-width: 52ch;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
-    }
-
-    .reservas__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      max-width: 800px;
-      margin-inline: auto;
-    }
-
-    .reservas-card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      text-align: center;
-      transition: background 0.3s;
-    }
-
-    .reservas-card:hover {
-      background: rgba(255,255,255,0.16);
-    }
-
-    .reservas-card__icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .reservas-card h3 {
-      font-size: 1.4rem;
-      color: var(--white);
-      margin-bottom: 0.5rem;
-    }
-
-    .reservas-card p {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 1.75rem;
-      line-height: 1.6;
-    }
-
-    .delivery-logos {
-      margin-top: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .delivery-logos span {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.5);
-    }
-
-    .delivery-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: var(--white);
-      padding: 0.5rem 1rem;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      transition: background 0.2s;
-    }
-
-    .delivery-pill:hover {
-      background: rgba(255,255,255,0.2);
-    }
-
-    /* ===========================
-       GALLERY STRIP
-    =========================== */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      height: 260px;
-      overflow: hidden;
-    }
-
-    .gallery__item {
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .gallery__item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .gallery__item:hover img { transform: scale(1.08); }
-
-    /* ===========================
-       REVIEWS
-    =========================== */
-    .reviews__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .review-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 2rem;
-      box-shadow: var(--shadow);
-      position: relative;
-    }
-
-    .review-card::before {
-      content: '"';
-      font-family: var(--font-serif);
-      font-size: 5rem;
-      color: var(--cream-dark);
-      position: absolute;
-      top: -0.5rem;
-      left: 1.25rem;
-      line-height: 1;
-    }
-
-    .review-stars {
-      display: flex;
-      gap: 2px;
-      color: var(--gold);
-      font-size: 0.9rem;
-      margin-bottom: 1rem;
-    }
-
-    .review-text {
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.7;
-      margin-bottom: 1.25rem;
-      font-style: italic;
-    }
-
-    .review-author {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .review-avatar {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .review-name {
-      font-size: 0.85rem;
-      font-weight: 700;
-    }
-
-    .review-source {
-      font-size: 0.72rem;
-      color: var(--text-light);
-    }
-
-    /* ===========================
-       NEWSLETTER
-    =========================== */
-    .newsletter {
-      background: var(--charcoal);
-      padding: 4rem 0;
-    }
-
-    .newsletter__inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .newsletter__text h3 {
-      font-size: 1.6rem;
-      color: var(--white);
-      margin-bottom: 0.4rem;
-    }
-
-    .newsletter__text p {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.55);
-    }
-
-    .newsletter__form {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .newsletter__input {
-      padding: 0.75rem 1.25rem;
-      border: 2px solid rgba(255,255,255,0.15);
-      background: rgba(255,255,255,0.06);
-      color: var(--white);
-      border-radius: var(--radius);
-      font-family: var(--font-sans);
-      font-size: 0.9rem;
-      width: 260px;
-      outline: none;
-      transition: border 0.2s;
-    }
-
-    .newsletter__input::placeholder { color: rgba(255,255,255,0.35); }
-    .newsletter__input:focus { border-color: var(--red); }
-
-    /* ===========================
-       FOOTER
-    =========================== */
-    footer {
-      background: #1A1007;
-      color: rgba(255,255,255,0.6);
-      padding: 4.5rem 0 2rem;
-    }
-
-    .footer__grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    .footer__brand .logo-main {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      color: var(--white);
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .footer__brand p {
-      font-size: 0.85rem;
-      line-height: 1.7;
-      max-width: 30ch;
-    }
-
-    .footer__socials {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-
-    .social-link {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.6);
-      transition: all 0.25s;
-    }
-
-    .social-link:hover {
-      background: var(--red);
-      border-color: var(--red);
-      color: var(--white);
-    }
-
-    .footer__col h4 {
-      font-family: var(--font-serif);
-      font-size: 1rem;
-      color: var(--white);
-      margin-bottom: 1.25rem;
-    }
-
-    .footer__links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer__links a {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.55);
-      transition: color 0.2s;
-    }
-
-    .footer__links a:hover { color: var(--white); }
-
-    .footer__bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.78rem;
-    }
-
-    .footer__legal {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer__legal a { color: rgba(255,255,255,0.4); }
-    .footer__legal a:hover { color: rgba(255,255,255,0.7); }
-
-    /* ===========================
-       MOBILE MENU
-    =========================== */
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(26,16,7,0.97);
-      z-index: 99;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .mobile-menu.open { display: flex; }
-
-    .mobile-menu nav {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.5rem;
-      list-style: none;
-    }
-
-    .mobile-menu nav a {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      color: var(--white);
-      font-style: italic;
-    }
-
-    .mobile-menu__close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      color: var(--white);
-      font-size: 2rem;
-      cursor: pointer;
-      line-height: 1;
-    }
-
-    /* ===========================
-       SCROLL ANIMATIONS
-    =========================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
-    /* ===========================
-       RESPONSIVE
-    =========================== */
-    @media (max-width: 1024px) {
-      .locations__grid { grid-template-columns: 1fr 1fr; }
-      .footer__grid { grid-template-columns: 1fr 1fr; }
-      .gallery { grid-template-columns: repeat(3, 1fr); height: 200px; }
-      .gallery__item:nth-child(4),
-      .gallery__item:nth-child(5) { display: none; }
-    }
-
-    @media (max-width: 768px) {
-      .section { padding: 4.5rem 0; }
-
-      .navbar__nav, .navbar__cta { display: none; }
-      .burger { display: flex; }
-
-      .hero__title { font-size: clamp(2.2rem, 8vw, 3.2rem); }
-
-      .about { grid-template-columns: 1fr; gap: 3rem; }
-      .about__img-accent { display: none; }
-      .about__img-main { height: 320px; }
-      .about__badge { width: 80px; height: 80px; }
-      .about__badge .year { font-size: 1.2rem; }
-
-      .locations__grid { grid-template-columns: 1fr; }
-
-      .menu-panel.active { grid-template-columns: 1fr; }
-
-      .reservas__grid { grid-template-columns: 1fr; max-width: 380px; }
-
-      .reviews__grid { grid-template-columns: 1fr; }
-
-      .newsletter__inner { flex-direction: column; text-align: center; }
-      .newsletter__form { justify-content: center; }
-      .newsletter__input { width: 100%; }
-
-      .footer__grid { grid-template-columns: 1fr 1fr; }
-      .footer__brand { grid-column: span 2; }
-
-      .gallery { height: 160px; }
-
-      .about__pillars { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 480px) {
-      .strip__inner { gap: 1.25rem; }
-      .strip__item span { display: none; }
-
-      .hero__actions { flex-direction: column; }
-      .hero__actions .btn { width: 100%; justify-content: center; }
-
-      .footer__grid { grid-template-columns: 1fr; }
-      .footer__brand { grid-column: unset; }
-
-      .footer__bottom { flex-direction: column; text-align: center; }
+    @media (max-width: 560px) {
+      body { font-size: 1rem; }
+      .hero__grid { grid-template-columns: 1fr; grid-template-areas: "logo" "text" "foot"; }
+      .hero__logo { justify-self: start; }
+      .hero__logo img { max-height: 30vh; width: auto; }
+      .hero__title { margin-top: .75rem; }
+      .hero__actions .ticket { flex: 1 1 100%; }
+      .articles { grid-template-columns: 1fr; }
+      .articles li + li { padding-left: 0; border-left: 0; margin-top: 1.25rem; border-top: 1px solid rgba(23,19,15,.45); padding-top: 1.25rem; }
+      .plates__row { grid-template-columns: repeat(5, 78%); }
+      .tab { flex: 1 1 0; font-size: 1.1rem; padding: .7rem .3rem; letter-spacing: .03em; }
+      .order__btns .ticket { flex: 1 1 100%; }
     }
   </style>
 </head>
 <body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
 
-<!-- ======= NAVBAR ======= -->
-<header class="navbar" id="navbar">
-  <div class="container navbar__inner">
-    <a href="#inicio" class="navbar__logo">
-      <span class="logo-main">Fratelli d'Italia</span>
-      <span class="logo-sub">Auténtica Pizzería · Madrid</span>
+<header class="masthead">
+  <div class="masthead__inner">
+    <a href="#inicio" class="brand" aria-label="Fratelli d'Italia, inicio">
+      <img src="img/logo-garibaldi.webp" alt="" width="30" height="58">
+      <span>Fratelli d'Italia</span>
     </a>
-    <ul class="navbar__nav">
-      <li><a href="#nosotros">Nosotros</a></li>
-      <li><a href="#locales">Locales</a></li>
-      <li><a href="#carta">Carta</a></li>
-      <li><a href="#reservas">Reservas</a></li>
-    </ul>
-    <a href="#reservas" class="navbar__cta">Reservar Mesa</a>
-    <div class="burger" id="burgerBtn" aria-label="Abrir menú">
-      <span></span><span></span><span></span>
-    </div>
+    <nav aria-label="Principal">
+      <ul class="nav">
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#locales">Locales</a></li>
+        <li><a href="#carta">Carta</a></li>
+      </ul>
+    </nav>
+    <a href="#reservar" class="ticket ticket--sm">Reservar mesa</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" id="menuOpen">
+      <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" stroke-width="2"/></svg>
+      Menú
+    </button>
   </div>
 </header>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-menu__close" id="closeMenu">✕</button>
-  <nav>
-    <a href="#nosotros" class="mm-link">Nosotros</a>
-    <a href="#locales" class="mm-link">Locales</a>
-    <a href="#carta" class="mm-link">Carta</a>
-    <a href="#reservas" class="mm-link">Reservas</a>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Menú">
+  <div class="drawer__top">
+    <span class="brand"><span>Fratelli d'Italia</span></span>
+    <button class="menu-btn" type="button" id="menuClose">
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2"/></svg>
+      Cerrar
+    </button>
+  </div>
+  <nav aria-label="Menú móvil">
+    <a href="#historia">Historia</a>
+    <a href="#locales">Locales</a>
+    <a href="#carta">Carta</a>
+    <a href="#reservar">Reservar</a>
   </nav>
-  <a href="#reservas" class="btn btn-primary">Reservar Mesa</a>
+  <a href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" class="ticket ticket--ink" target="_blank" rel="noopener noreferrer">Pedir a domicilio</a>
 </div>
 
-<!-- ======= HERO ======= -->
-<section class="hero" id="inicio">
-  <div class="hero__bg"></div>
-  <div class="container hero__content">
-    <div class="hero__flag">
-      <span style="background:#009246"></span>
-      <span style="background:#ffffff"></span>
-      <span style="background:#ce2b37"></span>
+<main id="contenido">
+
+<!-- ======= CARTEL PRINCIPAL ======= -->
+<section class="sheet hero" id="inicio" aria-labelledby="titulo">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <h1 class="hero__title" id="titulo">Fratelli<br>d’Italia</h1>
+      <p class="hero__motto wood">Due regioni · una cucina · <b>Madrid</b></p>
+      <p class="lede hero__lede">
+        Un cocinero sardo y otro de las Marcas se conocieron entre fogones y decidieron cocinar juntos.
+        Pizza al horno, pasta fresca y cannoli rellenos al momento, en Retiro, Chueca y Lavapiés.
+      </p>
+      <div class="hero__actions">
+        <a href="#reservar" class="ticket">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg>
+          Reservar mesa
+        </a>
+        <a href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" class="ticket ticket--ink" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h7l3-7h3M13 17l-2-7H7"/></svg>
+          Pedir a domicilio
+        </a>
+      </div>
     </div>
-    <p class="hero__eyebrow">Tres locales · Un solo sabor · Auténtico desde el primer bocado</p>
-    <h1 class="hero__title">El auténtico sabor de <em>Italia</em> en Madrid</h1>
-    <p class="hero__sub">
-      Masa artesanal de fermentación lenta, ingredientes importados directamente de Italia
-      y el amor de una familia que lleva generaciones haciendo pizza de verdad.
-    </p>
-    <div class="hero__actions">
-      <a href="#carta" class="btn btn-primary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-        Ver la Carta
-      </a>
-      <a href="#reservas" class="btn btn-outline">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-        Reservar / Pedir
-      </a>
-    </div>
-  </div>
-  <div class="hero__scroll">
-    <span>Descubre</span>
-    <div class="arrow"></div>
+    <figure class="hero__logo">
+      <img src="img/logo-garibaldi.webp" alt="Logotipo de Fratelli d'Italia: retrato estarcido de un hombre con gorra y barba y una banda tricolor italiana" width="560" height="1081" fetchpriority="high">
+    </figure>
+    <nav class="quarters" aria-label="Nuestros tres locales">
+      <ol>
+        <li><a href="#retiro"><span class="q-name">Retiro</span><span class="q-kind">Restaurante · C/ Antonio Arias, 4</span><span class="status" data-status="retiro">Horario</span></a></li>
+        <li><a href="#chueca"><span class="q-name">Chueca</span><span class="q-kind">Restaurante · C/ Hortaleza, 28</span><span class="status" data-status="chueca">Horario</span></a></li>
+        <li><a href="#lavapies"><span class="q-name">Lavapiés</span><span class="q-kind">Take away · C/ Sombrerete, 1</span><span class="status" data-status="lavapies">Horario</span></a></li>
+      </ol>
+    </nav>
   </div>
 </section>
 
-<!-- ======= STRIP ======= -->
-<div class="strip">
-  <div class="container strip__inner">
-    <div class="strip__item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-      <span>3 Locales en Madrid</span>
-    </div>
-    <div class="strip__item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-      <span>Masa de 48h de Fermentación</span>
-    </div>
-    <div class="strip__item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      <span>Ingredientes DOP Italianos</span>
-    </div>
-    <div class="strip__item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-      <span>+500 Reseñas 5 Estrellas</span>
-    </div>
-    <div class="strip__item">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span>Retiro · Chueca · Lavapiés</span>
-    </div>
-  </div>
-</div>
-
-<!-- ======= ABOUT ======= -->
-<section class="section" id="nosotros">
-  <div class="container">
-    <div class="about">
-      <div class="about__visual reveal">
-        <div class="about__badge">
-          <span class="year">2008</span>
-          <span class="since">Desde</span>
-        </div>
-        <img
-          src="pizza2.png"
-          alt="Pizza artesanal Fratelli d'Italia"
-          class="about__img-main"
-          loading="lazy"
-        />
-        <img
-          src="pizza1.png"
-          alt="Ingredientes frescos"
-          class="about__img-accent"
-          loading="lazy"
-        />
-      </div>
-      <div class="about__text reveal reveal-delay-2">
-        <span class="section-label">Nuestra Historia</span>
-        <h2 class="section-title">La pizza como <em>arte de familia</em></h2>
-        <p class="section-sub">
-          Todo comenzó en 2008 cuando la familia Marinucci decidió traer a Madrid lo que más echaban de menos de Nápoles: una pizza de verdad. No la de los menús rápidos, sino la que huele a madera quemada, la que cruje en los bordes y se derrite en el centro.
-        </p>
-        <p class="section-sub" style="margin-top:1rem">
-          Hoy, con tres locales repartidos por los barrios más vivos de la capital, seguimos usando la misma receta de masa de la <em>nonna</em> Rosaria: harina tipo 00, levadura natural, 48 horas de fermentación y las manos de siempre. Porque hay cosas que no se improvisan.
-        </p>
-        <div class="about__pillars">
-          <div class="pillar">
-            <div class="pillar__icon">🌾</div>
-            <h4>Masa Artesanal</h4>
-            <p>48h de fermentación lenta. Ligera, crujiente y perfectamente digestible.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar__icon">🍅</div>
-            <h4>Tomate San Marzano</h4>
-            <p>DOP. Traído directamente de la Campania italiana cada semana.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar__icon">🧀</div>
-            <h4>Fior di Latte DOP</h4>
-            <p>Mozzarella fresca de primera calidad. Nada de imitaciones.</p>
-          </div>
-          <div class="pillar">
-            <div class="pillar__icon">🔥</div>
-            <h4>Horno de Leña</h4>
-            <p>A 450°C durante 90 segundos. La única manera auténtica de hacerlo.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ======= GALLERY STRIP ======= -->
-<div class="gallery">
-  <div class="gallery__item">
-    <img src="tiramisu1.png" alt="tiramisu" loading="lazy">
-  </div>
-  <div class="gallery__item">
-    <img src="carpaccio1.png" alt="carpaccio1" loading="lazy">
-  </div>
-  <div class="gallery__item">
-    <img src="linguine1.png" alt="linguine1" loading="lazy">
-  </div>
-  <div class="gallery__item">
-    <img src="berenjena1.png" alt="berenjena1" loading="lazy">
-  </div>
-  <div class="gallery__item">
-    <img src="pizza3.png" alt="pizza3" loading="lazy">
-  </div>
-</div>
-
-<!-- ======= LOCATIONS ======= -->
-<section class="section section--alt" id="locales">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Nuestros Locales</span>
-      <h2 class="section-title">Tres rincones de Italia <em>en tu barrio</em></h2>
-      <p class="section-sub" style="margin-inline:auto">
-        Cada local tiene su propio carácter, pero todos comparten el mismo compromiso con la calidad y el sabor auténtico napolitano.
+<!-- ======= PROCLAMA ======= -->
+<section class="sheet sheet--red" id="historia" aria-labelledby="h-historia">
+  <div class="wrap">
+    <div class="procl__head">
+      <h2 class="h-section" id="h-historia">Hermanos de cocina, <em>no de sangre.</em></h2>
+      <p class="lede">
+        Se conocieron trabajando de cocineros en la misma cocina de un restaurante. Compartieron turnos, recetas
+        y largas discusiones sobre cuánto debe reposar una masa. Un día dejaron de discutir y abrieron la suya.
       </p>
     </div>
-    <div class="locations__grid">
 
-      <!-- Retiro -->
-      <div class="location-card reveal reveal-delay-1">
-        <img
-          src="local1.png"
-          alt="Fratelli d'Italia Retiro"
-          class="location-card__img"
-          loading="lazy"
-        />
-        <div class="location-card__body">
-          <span class="location-card__badge badge--restaurante">
-            🍽️ Restaurante
-          </span>
-          <h3 class="location-card__name">Fratelli RETIRO</h3>
-          <p class="location-card__tagline">El clásico de siempre. Arte en las paredes, mesas en blanco y sabor sin compromiso.</p>
-          <ul class="location-card__info">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              C/ Antonio Arias, 4 — Retiro
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-              Mar–Jue 13–16h · 20–23h<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Vie–Dom 13–23h (seguido)
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              +34 912 345 678
-            </li>
-          </ul>
-          <div class="location-card__actions">
-            <a  
-                href="https://www.google.com/maps/reserve/v/dine/c/msh8fSo1kl4?source=pa&opi=79508299&hl=es-ES&gei=ZdEAatvKOMuohbIP0oLTqQQ&sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m17!1s0xd4229f72731aca1:0xeee8689235b8ea0e!3m12!1m3!1d397.4487276812623!2d-3.67138669496352!3d40.41750355577265!2m3!1f0!2f0!3f0!3m2!1i1432!2i956!4f13.1!4m2!3d40.417617329033085!4d-3.671579360961914!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m2!1sYNEAapXqCdOkhbIP6P_r-Qs!7e81!15m111!1m29!4e2!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1382!2i0!2m2!1i1432!2i956!1m6!1m2!1i0!2i0!2m2!1i1432!2i20!1m6!1m2!1i0!2i936!2m2!1i1432!2i956!22m2!1e81!8e1!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria%26q%3DFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria"
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="btn btn-primary btn-sm">
-            Reservar Mesa
-          </a>
-
-            <a 
-                href="https://maps.google.com?q=C+Antonio+Arias+4+Madrid" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="btn btn-ghost btn-sm">
-       Ver en Maps
-    </a>
-</div>
-
-        </div>
+    <div class="duo">
+      <div class="duo__col">
+        <h3 class="wood">Sardegna</h3>
+        <p class="origin">La isla</p>
+        <p>Del mar y de los pastores: el pecorino, el pane carasau que cruje como papel y la costumbre de no tener nunca prisa en la mesa.</p>
       </div>
+      <span class="duo__plus" aria-hidden="true">&amp;</span>
+      <div class="duo__col">
+        <h3 class="wood">Marche</h3>
+        <p class="origin">Entre los Apeninos y el Adriático</p>
+        <p>De una región que se toma muy en serio la pasta al huevo, las olive all’ascolana y el trabajo hecho a mano, sin atajos.</p>
+      </div>
+      <div class="duo__sum">
+        <span class="eq" aria-hidden="true">=</span>
+        <p>Fratelli d’Italia: dos regiones, una cocina y tres direcciones en el corazón de Madrid.</p>
+      </div>
+    </div>
 
-      <!-- Chueca -->
-      <div class="location-card reveal reveal-delay-2">
-        <img
-          src="local2.png"
-          alt="Fratelli d'Italia Chueca"
-          class="location-card__img"
-          loading="lazy"
-        />
-        <div class="location-card__body">
-          <span class="location-card__badge badge--restaurante">
-            🍽️ Restaurante
-          </span>
-          <h3 class="location-card__name">Fratelli CHUECA</h3>
-          <p class="location-card__tagline">El alma urbana. Mismo sabor auténtico en el corazón vibrante de la ciudad.</p>
-          <ul class="location-card__info">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              C/ Hortaleza, 28 — Chueca
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-              Mar–Jue 13–16h · 20–23.30h<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Vie–Dom 13–23.30h (seguido)
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              +34 912 345 679
-            </li>
-          </ul>
-          <div class="location-card__actions">
-            <a  
-                href="https://www.google.com/maps/reserve/v/dine/c/crwdRvjI9Qc?source=pa&opi=79508299&hl=es-ES&gei=YtMAar_5NYu5hbIP5feAiA8&sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m20!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!3m12!1m3!1d3179.5695535290306!2d-3.6709769949375377!3d40.41793242652879!2m3!1f0!2f0!3f0!3m2!1i1912!2i956!4f13.1!4m2!3d40.421588299999996!4d-3.7000886!5e0!9e0!11s/g/11cs241b9r!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m6!1sYNEAapXqCdOkhbIP6P_r-Qs:119!2s1i:0,t:6986,p:YNEAapXqCdOkhbIP6P_r-Qs:119!7e81!12e15!17sYNEAapXqCdOkhbIP6P_r-Qs:122!18e3!15m110!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1862!2i0!2m2!1i1912!2i956!1m6!1m2!1i0!2i0!2m2!1i1912!2i20!1m6!1m2!1i0!2i936!2m2!1i1912!2i956!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid%26q%3DFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid"
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="btn btn-primary btn-sm">
-            Reservar Mesa
-          </a>
+    <svg class="fleuron" viewBox="0 0 420 24" aria-hidden="true" fill="currentColor">
+      <path d="M0 11.5h168v1H0zM252 11.5h168v1H252z"/>
+      <path d="M210 1l2.9 7.4 7.9.4-6.1 5 2 7.7-6.7-4.3-6.7 4.3 2-7.7-6.1-5 7.9-.4z"/>
+      <path d="M186 6l1.6 4 4.3.3-3.3 2.7 1.1 4.2-3.7-2.4-3.7 2.4 1.1-4.2-3.3-2.7 4.3-.3zM234 6l1.6 4 4.3.3-3.3 2.7 1.1 4.2-3.7-2.4-3.7 2.4 1.1-4.2-3.3-2.7 4.3-.3z"/>
+    </svg>
 
-            <a 
-                href="https://maps.google.com?q=C+Antonio+Arias+4+Madrid" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="btn btn-ghost btn-sm">
-       Ver en Maps
-    </a>
+    <ol class="articles" aria-label="Lo que no negociamos">
+      <li>
+        <h3>Masa artesanal</h3>
+        <p>48 horas de fermentación lenta. Ligera, crujiente y fácil de digerir.</p>
+      </li>
+      <li>
+        <h3>Tomate San Marzano</h3>
+        <p>DOP, traído de la Campania italiana cada semana.</p>
+      </li>
+      <li>
+        <h3>Fior di latte</h3>
+        <p>Mozzarella fresca de primera calidad. Nada de imitaciones.</p>
+      </li>
+      <li>
+        <h3>Horno de leña</h3>
+        <p>A 450 °C durante 90 segundos. Así se hace.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ======= LÁMINAS ======= -->
+<section class="sheet plates" aria-label="Algunos de nuestros platos">
+  <div class="plates__row">
+    <figure class="plate"><img src="img/pizza3.webp" alt="Bandeja de pizza al taglio con jamón, salami y pesto" width="719" height="862" loading="lazy"><figcaption>Pizza al taglio</figcaption></figure>
+    <figure class="plate"><img src="img/linguine1.webp" alt="Fuente de pasta con marisco, gambas y mejillones" width="680" height="853" loading="lazy"><figcaption>Pasta ai frutti di mare</figcaption></figure>
+    <figure class="plate"><img src="img/carpaccio1.webp" alt="Carpaccio con rúcula, lascas de parmesano y limón" width="677" height="771" loading="lazy"><figcaption>Carpaccio</figcaption></figure>
+    <figure class="plate"><img src="img/berenjena1.webp" alt="Cazuela de berenjena al horno con tomate y mozzarella gratinada" width="697" height="876" loading="lazy"><figcaption>Parmigiana di melanzane</figcaption></figure>
+    <figure class="plate"><img src="img/tiramisu1.webp" alt="Tiramisú casero espolvoreado con cacao y virutas de chocolate" width="675" height="877" loading="lazy"><figcaption>Tiramisù</figcaption></figure>
+  </div>
+</section>
+
+<!-- ======= LOCALES ======= -->
+<section class="sheet sheet--green" id="locales" aria-labelledby="h-locales">
+  <div class="wrap">
+    <div class="loc__head">
+      <h2 class="h-section" id="h-locales">Tres direcciones <em>en Madrid</em></h2>
+      <p class="lede">Dos restaurantes para sentarse sin prisa y un take away para llevarse la pizza por porciones. Mismo horno, misma masa.</p>
+    </div>
+
+    <div class="bills">
+      <article class="bill" id="retiro" aria-labelledby="n-retiro">
+        <img class="bill__img" src="img/local1.webp" alt="Comedor del local de Retiro: paredes azules, arcos y suelo hidráulico" width="690" height="891" loading="lazy">
+        <div class="bill__body">
+          <h3 class="bill__name" id="n-retiro">Retiro</h3>
+          <p class="bill__tag">El clásico. Arte en las paredes, manteles blancos y sabor sin compromiso.</p>
+          <p class="status" data-status="retiro">Horario</p>
+          <dl class="facts">
+            <dt>Tipo</dt><dd>Restaurante · reserva</dd>
+            <dt>Dirección</dt><dd>C/ Antonio Arias, 4 · 28009 Madrid</dd>
+            <dt>Horario</dt><dd class="hours">Mar–Jue 13–16 h · 20–23 h<br>Vie–Dom 13–23 h<br>Lunes cerrado</dd>
+            <dt>Teléfono</dt><dd><a href="tel:+34912345678">912 345 678</a></dd>
+          </dl>
+          <div class="bill__actions">
+            <a class="ticket ticket--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/msh8fSo1kl4?source=pa&opi=79508299&hl=es-ES&gei=ZdEAatvKOMuohbIP0oLTqQQ&sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m17!1s0xd4229f72731aca1:0xeee8689235b8ea0e!3m12!1m3!1d397.4487276812623!2d-3.67138669496352!3d40.41750355577265!2m3!1f0!2f0!3f0!3m2!1i1432!2i956!4f13.1!4m2!3d40.417617329033085!4d-3.671579360961914!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m2!1sYNEAapXqCdOkhbIP6P_r-Qs!7e81!15m111!1m29!4e2!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1382!2i0!2m2!1i1432!2i956!1m6!1m2!1i0!2i0!2m2!1i1432!2i20!1m6!1m2!1i0!2i936!2m2!1i1432!2i956!22m2!1e81!8e1!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria%26q%3DFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria">Reservar en Retiro</a>
+            <a class="textlink" href="https://maps.google.com?q=C+Antonio+Arias+4+Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- Lavapiés -->
-      <div class="location-card reveal reveal-delay-3">
-        <img
-          src="local3.png"
-          alt="Fratelli d'Italia Lavapiés Take Away"
-          class="location-card__img"
-          loading="lazy"
-        />
-        <div class="location-card__body">
-          <span class="location-card__badge badge--takeaway">
-            📦 Take Away
-          </span>
-          <h3 class="location-card__name">Fratelli LAVAPIÉS</h3>
-          <p class="location-card__tagline">El más canalla. Porciones, cannolis y toda la energía de Lavapiés para llevar.</p>
-          <ul class="location-card__info">
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              C/ Sombrerete, 1 — Lavapiés
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"/><path d="M12 6v6l4 2"/></svg>
-              Mar–Dom 13–23.30h<br>
-              &nbsp;&nbsp;&nbsp;&nbsp;Sólo Take Away / Porciones
-            </li>
-            <li>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              +34 912 345 680
-            </li>
-          </ul>
-          <div class="location-card__actions">
-            <a href="#reservas" class="btn btn-primary btn-sm">Pedir a Domicilio</a>
-            <a href="https://maps.google.com?q=C+Sombrerete+1+Madrid" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Ver en Maps</a>
+      <article class="bill" id="chueca" aria-labelledby="n-chueca">
+        <img class="bill__img" src="img/local2.webp" alt="Comedor del local de Chueca: papel pintado, lámparas colgantes y mesas de madera" width="906" height="602" loading="lazy">
+        <div class="bill__body">
+          <h3 class="bill__name" id="n-chueca">Chueca</h3>
+          <p class="bill__tag">El alma urbana. El mismo sabor en el corazón más vivo de la ciudad.</p>
+          <p class="status" data-status="chueca">Horario</p>
+          <dl class="facts">
+            <dt>Tipo</dt><dd>Restaurante · reserva</dd>
+            <dt>Dirección</dt><dd>C/ Hortaleza, 28 · 28004 Madrid</dd>
+            <dt>Horario</dt><dd class="hours">Mar–Jue 13–16 h · 20–23:30 h<br>Vie–Dom 13–23:30 h<br>Lunes cerrado</dd>
+            <dt>Teléfono</dt><dd><a href="tel:+34912345679">912 345 679</a></dd>
+          </dl>
+          <div class="bill__actions">
+            <a class="ticket ticket--sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/crwdRvjI9Qc?source=pa&opi=79508299&hl=es-ES&gei=YtMAar_5NYu5hbIP5feAiA8&sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m20!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!3m12!1m3!1d3179.5695535290306!2d-3.6709769949375377!3d40.41793242652879!2m3!1f0!2f0!3f0!3m2!1i1912!2i956!4f13.1!4m2!3d40.421588299999996!4d-3.7000886!5e0!9e0!11s/g/11cs241b9r!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m6!1sYNEAapXqCdOkhbIP6P_r-Qs:119!2s1i:0,t:6986,p:YNEAapXqCdOkhbIP6P_r-Qs:119!7e81!12e15!17sYNEAapXqCdOkhbIP6P_r-Qs:122!18e3!15m110!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1862!2i0!2m2!1i1912!2i956!1m6!1m2!1i0!2i0!2m2!1i1912!2i20!1m6!1m2!1i0!2i936!2m2!1i1912!2i956!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid%26q%3DFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid">Reservar en Chueca</a>
+            <a class="textlink" href="https://www.google.es/maps/place/Fratelli+d'Italia+Chueca+%7C+RISTORANTE+PIZZERIA/@40.4215883,-3.7026635,868m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!8m2!3d40.4215883!4d-3.7000886!16s%2Fg%2F11cs241b9r" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
           </div>
         </div>
-      </div>
+      </article>
 
+      <article class="bill" id="lavapies" aria-labelledby="n-lavapies">
+        <img class="bill__img" src="img/local3.webp" alt="Fachada del local de Lavapiés con la bandera negra de Fratelli d'Italia" width="711" height="543" loading="lazy">
+        <div class="bill__body">
+          <h3 class="bill__name" id="n-lavapies">Lavapiés</h3>
+          <p class="bill__tag">El más canalla. Porciones, cannoli y toda la energía del barrio, para llevar.</p>
+          <p class="status" data-status="lavapies">Horario</p>
+          <dl class="facts">
+            <dt>Tipo</dt><dd>Take away · porciones · domicilio</dd>
+            <dt>Dirección</dt><dd>C/ Sombrerete, 1 · 28012 Madrid</dd>
+            <dt>Horario</dt><dd class="hours">Mar–Dom 13–23:30 h<br>Lunes cerrado</dd>
+            <dt>Teléfono</dt><dd><a href="tel:+34912345680">912 345 680</a></dd>
+          </dl>
+          <div class="bill__actions">
+            <a class="ticket ticket--sm ticket--ink" href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" target="_blank" rel="noopener noreferrer">Pedir a domicilio</a>
+            <a class="textlink" href="https://maps.google.com?q=C+Sombrerete+1+Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- ======= MENU ======= -->
-<section class="section" id="carta">
-  <div class="container">
-    <div class="reveal" style="text-align:center; margin-bottom:1rem">
-      <span class="section-label">La Carta</span>
-      <h2 class="section-title">Sabores que <em>cuentan historias</em></h2>
-      <p class="section-sub" style="margin-inline:auto">
-        Una carta concisa y honesta. Lo que está, está porque es bueno.
-      </p>
-    </div>
-    <div class="menu__tabs reveal">
-      <button class="tab active" data-tab="pizzas">🍕 Pizzas</button>
-      <button class="tab" data-tab="entrantes">🥗 Entrantes</button>
-      <button class="tab" data-tab="pasta">🍝 Pasta</button>
-      <button class="tab" data-tab="postres">🍮 Postres</button>
+<!-- ======= CARTA ======= -->
+<section class="sheet sheet--yellow" id="carta" aria-labelledby="h-carta">
+  <div class="wrap">
+    <div class="menu__head">
+      <h2 class="h-section" id="h-carta">La carta</h2>
+      <p class="lede">Corta y honesta. Lo que está, está porque es bueno.</p>
     </div>
 
-    <!-- PIZZAS -->
-    <div class="menu-panel active" id="tab-pizzas">
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Marinara</h4>
-          <p class="menu-item__desc">Salsa de tomate, ajo, aceite de oliva y orégano.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">13,50€</span>
-          <span class="menu-tag tag--star">Clásico</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Diavola</h4>
-          <p class="menu-item__desc">Tomate, mozzarella, salame piccante calabrese, guindilla.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">15,50€</span>
-          <span class="menu-tag tag--star">Top Ventas</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Quattro Stagioni</h4>
-          <p class="menu-item__desc">Tomate, mozzarella, jamón cocido, alcachofas, aceitunas negras, champiñones.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">16,50€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Burrata e Prosciutto</h4>
-          <p class="menu-item__desc">Base blanca, burrata fresca, prosciutto crudo 18 meses, rúcula, reducción de balsámico.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">18,50€</span>
-          <span class="menu-tag tag--new">Chef</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Funghi Porcini</h4>
-          <p class="menu-item__desc">Base crema de trufa, mozzarella, porcini frescos, parmesano, tomillo.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">17,50€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Verdure di Stagione</h4>
-          <p class="menu-item__desc">Tomate, mozzarella, pimientos asados, berenjenas, calabacín, rúcula. Vegetariana.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">14,50€</span>
-          <span class="menu-tag tag--veg">Veggie</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Verdure di Stagione</h4>
-          <p class="menu-item__desc">Tomate, mozzarella, pimientos asados, berenjenas, calabacín, rúcula. Vegetariana.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">14,50€</span>
-          <span class="menu-tag tag--veg">Veggie</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Verdure di Stagione</h4>
-          <p class="menu-item__desc">Tomate, mozzarella, pimientos asados, berenjenas, calabacín, rúcula. Vegetariana.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">14,50€</span>
-          <span class="menu-tag tag--veg">Veggie</span>
-        </div>
-      </div>
+    <div class="tabs" role="tablist" aria-label="Secciones de la carta">
+      <button class="tab" role="tab" id="t-pizzas" aria-controls="p-pizzas" aria-selected="true">Pizzas</button>
+      <button class="tab" role="tab" id="t-entrantes" aria-controls="p-entrantes" aria-selected="false" tabindex="-1">Entrantes</button>
+      <button class="tab" role="tab" id="t-pasta" aria-controls="p-pasta" aria-selected="false" tabindex="-1">Pasta</button>
+      <button class="tab" role="tab" id="t-postres" aria-controls="p-postres" aria-selected="false" tabindex="-1">Postres</button>
     </div>
 
-    <!-- ENTRANTES -->
-    <div class="menu-panel" id="tab-entrantes">
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Bruschetta al Pomodoro</h4>
-          <p class="menu-item__desc">Pan de masa madre, tomate concassé, ajo, AOVE, albahaca.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">6,50€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Supplì alla Romana</h4>
-          <p class="menu-item__desc">Croquetas de arroz rellenas de ragú y mozzarella. 4 unidades.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">8,50€</span>
-          <span class="menu-tag tag--star">Favorito</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Tabla de Embutidos Italianos</h4>
-          <p class="menu-item__desc">Selección de mortadela, 'nduja, coppa y prosciutto con focaccia.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">14,00€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Burrata con Tomate</h4>
-          <p class="menu-item__desc">Burrata fresca con tomates cherry asados, pesto y aceite de albahaca.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">11,50€</span>
-        </div>
-      </div>
+    <div class="panel" role="tabpanel" id="p-pizzas" aria-labelledby="t-pizzas" tabindex="0">
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Marinara</h3><span class="dish__dots"></span><span class="dish__price">13,50 €</span></div><p class="dish__desc">Salsa de tomate, ajo, aceite de oliva y orégano.</p><span class="dish__mark">Clásico</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Diavola</h3><span class="dish__dots"></span><span class="dish__price">15,50 €</span></div><p class="dish__desc">Tomate, mozzarella, salame piccante calabrese, guindilla.</p><span class="dish__mark">La más pedida</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Quattro Stagioni</h3><span class="dish__dots"></span><span class="dish__price">16,50 €</span></div><p class="dish__desc">Tomate, mozzarella, jamón cocido, alcachofas, aceitunas negras, champiñones.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Burrata e Prosciutto</h3><span class="dish__dots"></span><span class="dish__price">18,50 €</span></div><p class="dish__desc">Base blanca, burrata fresca, prosciutto crudo 18 meses, rúcula, reducción de balsámico.</p><span class="dish__mark">Del chef</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Funghi Porcini</h3><span class="dish__dots"></span><span class="dish__price">17,50 €</span></div><p class="dish__desc">Base de crema de trufa, mozzarella, porcini frescos, parmesano, tomillo.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Verdure di Stagione</h3><span class="dish__dots"></span><span class="dish__price">14,50 €</span></div><p class="dish__desc">Tomate, mozzarella, pimientos asados, berenjenas, calabacín, rúcula.</p><span class="dish__mark">Vegetariana</span></div>
     </div>
 
-    <!-- PASTA -->
-    <div class="menu-panel" id="tab-pasta">
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Spaghetti alla Carbonara</h4>
-          <p class="menu-item__desc">Spaghetti, guanciale, huevo, Pecorino Romano DOP. Sin nata, como Dios manda.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">14,00€</span>
-          <span class="menu-tag tag--star">Clásico</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Rigatoni all'Amatriciana</h4>
-          <p class="menu-item__desc">Rigatoni, guanciale, tomate San Marzano, guindilla, Pecorino.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">13,50€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Paccheri al Ragù Napoletano</h4>
-          <p class="menu-item__desc">Pasta larga con ragú de ternera cocinado 6 horas. Receta de la nonna.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">15,00€</span>
-          <span class="menu-tag tag--new">Especial</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Tagliatelle al Pesto Genovese</h4>
-          <p class="menu-item__desc">Tagliatelle frescos, pesto genovese DOP, piñones tostados, parmesano.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">13,00€</span>
-          <span class="menu-tag tag--veg">Veggie</span>
-        </div>
-      </div>
+    <div class="panel" role="tabpanel" id="p-entrantes" aria-labelledby="t-entrantes" tabindex="0" hidden>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Bruschetta al Pomodoro</h3><span class="dish__dots"></span><span class="dish__price">6,50 €</span></div><p class="dish__desc">Pan de masa madre, tomate concassé, ajo, AOVE, albahaca.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Supplì alla Romana</h3><span class="dish__dots"></span><span class="dish__price">8,50 €</span></div><p class="dish__desc">Croquetas de arroz rellenas de ragú y mozzarella. 4 unidades.</p><span class="dish__mark">Favorito</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Tabla de Embutidos Italianos</h3><span class="dish__dots"></span><span class="dish__price">14,00 €</span></div><p class="dish__desc">Selección de mortadela, ’nduja, coppa y prosciutto con focaccia.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Burrata con Tomate</h3><span class="dish__dots"></span><span class="dish__price">11,50 €</span></div><p class="dish__desc">Burrata fresca con tomates cherry asados, pesto y aceite de albahaca.</p></div>
     </div>
 
-    <!-- POSTRES -->
-    <div class="menu-panel" id="tab-postres">
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Cannoli Siciliani</h4>
-          <p class="menu-item__desc">Barquillo crujiente relleno al momento de ricotta con naranja y chips de chocolate. La firma de la casa.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">5,00€ / ud.</span>
-          <span class="menu-tag tag--star">Imprescindible</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Tiramisù Casero</h4>
-          <p class="menu-item__desc">Receta tradicional con Savoiardi, mascarpone, espresso y Marsala.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">6,50€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Panna Cotta al Pistacchio</h4>
-          <p class="menu-item__desc">Panna cotta cremosa con coulis de pistacho de Bronte y frutos rojos.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">6,00€</span>
-        </div>
-      </div>
-      <div class="menu-item">
-        <div class="menu-item__info">
-          <h4 class="menu-item__name">Gelato Artigianale</h4>
-          <p class="menu-item__desc">3 bolas de helado artesanal. Sabores del día. Consultar disponibilidad.</p>
-        </div>
-        <div class="menu-item__meta">
-          <span class="menu-item__price">4,50€</span>
-        </div>
-      </div>
+    <div class="panel" role="tabpanel" id="p-pasta" aria-labelledby="t-pasta" tabindex="0" hidden>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Spaghetti alla Carbonara</h3><span class="dish__dots"></span><span class="dish__price">14,00 €</span></div><p class="dish__desc">Spaghetti, guanciale, huevo, Pecorino Romano DOP. Sin nata, como Dios manda.</p><span class="dish__mark">Clásico</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Rigatoni all’Amatriciana</h3><span class="dish__dots"></span><span class="dish__price">13,50 €</span></div><p class="dish__desc">Rigatoni, guanciale, tomate San Marzano, guindilla, Pecorino.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Paccheri al Ragù Napoletano</h3><span class="dish__dots"></span><span class="dish__price">15,00 €</span></div><p class="dish__desc">Pasta larga con ragú de ternera cocinado 6 horas.</p><span class="dish__mark">Especial</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Tagliatelle al Pesto Genovese</h3><span class="dish__dots"></span><span class="dish__price">13,00 €</span></div><p class="dish__desc">Tagliatelle frescos, pesto genovese DOP, piñones tostados, parmesano.</p><span class="dish__mark">Vegetariana</span></div>
     </div>
 
-    <p class="menu__note reveal">
-      ⓘ La carta puede variar ligeramente según el local. El local de Lavapiés (Take Away) ofrece principalmente pizzas por porciones, cannolis y entrantes para llevar. Consulta disponibilidad de platos de pasta en Retiro y Chueca.
-    </p>
+    <div class="panel" role="tabpanel" id="p-postres" aria-labelledby="t-postres" tabindex="0" hidden>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Cannoli Siciliani</h3><span class="dish__dots"></span><span class="dish__price">5,00 € / ud.</span></div><p class="dish__desc">Barquillo crujiente relleno al momento de ricotta con naranja y chips de chocolate. La firma de la casa.</p><span class="dish__mark">Imprescindible</span></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Tiramisù Casero</h3><span class="dish__dots"></span><span class="dish__price">6,50 €</span></div><p class="dish__desc">Receta tradicional con savoiardi, mascarpone, espresso y marsala.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Panna Cotta al Pistacchio</h3><span class="dish__dots"></span><span class="dish__price">6,00 €</span></div><p class="dish__desc">Panna cotta cremosa con coulis de pistacho de Bronte y frutos rojos.</p></div>
+      <div class="dish"><div class="dish__line"><h3 class="dish__name">Gelato Artigianale</h3><span class="dish__dots"></span><span class="dish__price">4,50 €</span></div><p class="dish__desc">Tres bolas de helado artesanal. Sabores del día, según disponibilidad.</p></div>
+    </div>
+
+    <p class="menu__note">La carta puede variar según el local. En Lavapiés (take away) hay sobre todo pizza por porciones, cannoli y entrantes para llevar; la pasta se sirve en Retiro y Chueca.</p>
   </div>
 </section>
 
-<!-- ======= REVIEWS ======= -->
-<section class="section section--alt">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <span class="section-label">Lo que dicen nuestros clientes</span>
-      <h2 class="section-title">Más de 500 reseñas <em>de cinco estrellas</em></h2>
+<!-- ======= RESEÑAS ======= -->
+<section class="sheet" aria-labelledby="h-voces">
+  <div class="wrap">
+    <h2 class="h-section" id="h-voces">Lo que se dice <em>en la mesa</em></h2>
+    <div class="voices__grid">
+      <figure class="voice">
+        <div class="stars" aria-label="5 de 5 estrellas"><svg width="90" height="16" viewBox="0 0 90 16" aria-hidden="true" fill="currentColor"><path id="st" d="M8 0l2.4 5 5.6.6-4.2 3.8 1.2 5.6L8 12.2 3 15l1.2-5.6L0 5.6 5.6 5z"/><use href="#st" x="18.5"/><use href="#st" x="37"/><use href="#st" x="55.5"/><use href="#st" x="74"/></svg></div>
+        <blockquote><p>«La mejor pizza que he comido fuera de Nápoles. La masa es increíble: ligera, con ese borde perfecto. La Diavola es adictiva.»</p></blockquote>
+        <figcaption>María G.<span>Google Reviews · Retiro</span></figcaption>
+      </figure>
+      <figure class="voice">
+        <div class="stars" aria-label="5 de 5 estrellas"><svg width="90" height="16" viewBox="0 0 90 16" aria-hidden="true" fill="currentColor"><use href="#st"/><use href="#st" x="18.5"/><use href="#st" x="37"/><use href="#st" x="55.5"/><use href="#st" x="74"/></svg></div>
+        <blockquote><p>«Los cannoli de Lavapiés los rellenan al momento y el barquillo está perfectamente crujiente. Los pido cada semana.»</p></blockquote>
+        <figcaption>Carlos M.<span>TripAdvisor · Lavapiés</span></figcaption>
+      </figure>
+      <figure class="voice">
+        <div class="stars" aria-label="5 de 5 estrellas"><svg width="90" height="16" viewBox="0 0 90 16" aria-hidden="true" fill="currentColor"><use href="#st"/><use href="#st" x="18.5"/><use href="#st" x="37"/><use href="#st" x="55.5"/><use href="#st" x="74"/></svg></div>
+        <blockquote><p>«Cena perfecta en Chueca: ambiente íntimo, servicio atentísimo y una carbonara sin nata para quitarse el sombrero.»</p></blockquote>
+        <figcaption>Ana L.<span>Google Reviews · Chueca</span></figcaption>
+      </figure>
     </div>
-    <div class="reviews__grid">
-      <div class="review-card reveal reveal-delay-1">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">La mejor pizza que he comido fuera de Nápoles. La masa es increíble — ligera, con ese borde perfecto. La Diavola es adictiva. Volveremos sí o sí.</p>
-        <div class="review-author">
-          <img src="https://i.pravatar.cc/80?img=47" alt="María G." class="review-avatar" loading="lazy">
-          <div>
-            <div class="review-name">María G.</div>
-            <div class="review-source">Google Reviews · Retiro</div>
-          </div>
+  </div>
+</section>
+
+<!-- ======= AVISO FINAL: RESERVAR / PEDIR ======= -->
+<section class="sheet sheet--ink" id="reservar" aria-labelledby="h-reservar">
+  <div class="wrap">
+    <h2 class="notice__title" id="h-reservar">¿Quedamos <em>hoy?</em></h2>
+    <p class="lede notice__lede">Mesa en Retiro o en Chueca, o pizza a domicilio desde Lavapiés. Como quieras, cuando quieras.</p>
+    <div class="orders">
+      <div class="order">
+        <h3>Reservar mesa</h3>
+        <p>Reserva online en Google o llama directamente al local.</p>
+        <div class="order__btns">
+          <a class="ticket" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/msh8fSo1kl4?source=pa&opi=79508299&hl=es-ES&gei=ZdEAatvKOMuohbIP0oLTqQQ&sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m17!1s0xd4229f72731aca1:0xeee8689235b8ea0e!3m12!1m3!1d397.4487276812623!2d-3.67138669496352!3d40.41750355577265!2m3!1f0!2f0!3f0!3m2!1i1432!2i956!4f13.1!4m2!3d40.417617329033085!4d-3.671579360961914!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m2!1sYNEAapXqCdOkhbIP6P_r-Qs!7e81!15m111!1m29!4e2!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1382!2i0!2m2!1i1432!2i956!1m6!1m2!1i0!2i0!2m2!1i1432!2i20!1m6!1m2!1i0!2i936!2m2!1i1432!2i956!22m2!1e81!8e1!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria%26q%3DFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria">Retiro</a>
+          <a class="ticket" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/crwdRvjI9Qc?source=pa&opi=79508299&hl=es-ES&gei=YtMAar_5NYu5hbIP5feAiA8&sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m20!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!3m12!1m3!1d3179.5695535290306!2d-3.6709769949375377!3d40.41793242652879!2m3!1f0!2f0!3f0!3m2!1i1912!2i956!4f13.1!4m2!3d40.421588299999996!4d-3.7000886!5e0!9e0!11s/g/11cs241b9r!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m6!1sYNEAapXqCdOkhbIP6P_r-Qs:119!2s1i:0,t:6986,p:YNEAapXqCdOkhbIP6P_r-Qs:119!7e81!12e15!17sYNEAapXqCdOkhbIP6P_r-Qs:122!18e3!15m110!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1862!2i0!2m2!1i1912!2i956!1m6!1m2!1i0!2i0!2m2!1i1912!2i20!1m6!1m2!1i0!2i936!2m2!1i1912!2i956!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid%26q%3DFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid">Chueca</a>
         </div>
       </div>
-      <div class="review-card reveal reveal-delay-2">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Los cannolis del local de Lavapiés son una experiencia. Los rellenan al momento y el barquillo está perfectamente crujiente. Los pido cada semana.</p>
-        <div class="review-author">
-          <img src="https://i.pravatar.cc/80?img=12" alt="Carlos M." class="review-avatar" loading="lazy">
-          <div>
-            <div class="review-name">Carlos M.</div>
-            <div class="review-source">TripAdvisor · Lavapiés</div>
-          </div>
-        </div>
-      </div>
-      <div class="review-card reveal reveal-delay-3">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Fui al de Chueca con mi pareja y fue una cena perfecta. El ambiente es íntimo y acogedor, el servicio atentísimo y la carbonara sin nata es para quitarse el sombrero.</p>
-        <div class="review-author">
-          <img src="https://i.pravatar.cc/80?img=32" alt="Ana L." class="review-avatar" loading="lazy">
-          <div>
-            <div class="review-name">Ana L.</div>
-            <div class="review-source">Google Reviews · Chueca</div>
-          </div>
+      <div class="order">
+        <h3>Pedir a domicilio</h3>
+        <p>Desde Lavapiés enviamos a domicilio a través de Glovo. También nos encuentras en Uber Eats y Just Eat.</p>
+        <div class="order__btns">
+          <a class="ticket ticket--paper" href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" target="_blank" rel="noopener noreferrer">Pedir en Glovo</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======= RESERVAS & PEDIDOS ======= -->
-<section class="reservas" id="reservas">
-  <div class="container">
-    <span class="section-label" style="color:rgba(255,255,255,0.6); text-align:center; display:block">Reservas y Pedidos</span>
-    <h2 class="reservas__title">¿Quedamos <em>hoy</em>?</h2>
-    <p class="reservas__sub">Reserva tu mesa en Retiro o Chueca, o pide a domicilio desde Lavapiés. Como quieras, cuando quieras.</p>
-    <div class="reservas__grid">
-      <div class="reservas-card">
-        <div class="reservas-card__icon">🍽️</div>
-        <h3>Reservar Mesa</h3>
-        <p>Para los locales de <strong>Retiro</strong> y <strong>Chueca</strong>. Asegura tu sitio y ven a disfrutar sin prisa.</p>
-        <a href="#locales" class="btn btn-outline" style="width:100%; justify-content:center">
-          Solicitar Reserva
-        </a>
-        <p style="margin-top:0.75rem; font-size:0.75rem; color:rgba(255,255,255,0.45)">O llama directamente al local</p>
-      </div>
-      <div class="reservas-card">
-        <div class="reservas-card__icon">🛵</div>
-        <h3>Pedir a Domicilio</h3>
-        <p>Desde nuestro local de <strong>Lavapiés</strong> también enviamos a domicilio a través de nuestras plataformas partner.</p>
-        <a  href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" 
-            class="btn btn-primary" 
-            style="width:100%; justify-content:center" 
-            target="_blank" 
-            rel="noopener noreferrer">
-            Pedir Ahora
-        </a>
+</main>
 
-        <p style="margin-top:0.75rem; font-size:0.75rem; color:rgba(255,255,255,0.45)">Disponible en Uber Eats y Glovo</p>
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__brand">
+      <img class="seal" src="img/logo-garibaldi.webp" alt="" width="76" height="147" loading="lazy">
+      <div>
+        <strong>Fratelli d’Italia</strong>
+        <p>Restaurante italiano en Madrid. Dos cocineros, uno de Cerdeña y otro de las Marcas; tres direcciones.</p>
       </div>
     </div>
-    <div class="delivery-logos">
-      <span>Disponible en</span>
-      <a href="#" class="delivery-pill">🟢 Uber Eats</a>
-      <a href="#" class="delivery-pill">🟡 Glovo</a>
-      <a href="#" class="delivery-pill">🔵 Just Eat</a>
+    <div>
+      <h2>Locales</h2>
+      <ul>
+        <li><a href="#retiro">Retiro · C/ Antonio Arias, 4</a></li>
+        <li><a href="#chueca">Chueca · C/ Hortaleza, 28</a></li>
+        <li><a href="#lavapies">Lavapiés · C/ Sombrerete, 1</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Contacto</h2>
+      <ul>
+        <li><a href="mailto:hola@fratelliditalia.es">hola@fratelliditalia.es</a></li>
+        <li><a href="tel:+34912345678">912 345 678 · Retiro</a></li>
+        <li><a href="tel:+34912345679">912 345 679 · Chueca</a></li>
+        <li><a href="tel:+34912345680">912 345 680 · Lavapiés</a></li>
+      </ul>
     </div>
   </div>
-</section>
-
-<!-- ======= NEWSLETTER ======= -->
-<div class="newsletter">
-  <div class="container newsletter__inner">
-    <div class="newsletter__text">
-      <h3>La pizza del mes, en tu bandeja</h3>
-      <p>Novedades, promociones y el menú especial de temporada. Sin spam, solo buenas noticias.</p>
-    </div>
-    <div class="newsletter__form">
-      <input type="email" class="newsletter__input" placeholder="tu@email.com" />
-      <button class="btn btn-primary">Suscribirme</button>
-    </div>
-  </div>
-</div>
-
-<!-- ======= FOOTER ======= -->
-<footer>
-  <div class="container">
-    <div class="footer__grid">
-      <div class="footer__brand">
-        <span class="logo-main">Fratelli d'Italia</span>
-        <p>Auténtica pizza napolitana en Madrid desde 2008. Tres locales, una sola familia, un solo sabor.</p>
-        <div class="footer__socials">
-          <a href="#" class="social-link" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="TikTok">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.79a8.18 8.18 0 004.78 1.52V6.83a4.85 4.85 0 01-1.01-.14z"/></svg>
-          </a>
-          <a href="#" class="social-link" aria-label="Google Maps">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <div class="footer__col">
-        <h4>Locales</h4>
-        <ul class="footer__links">
-          <li><a href="#locales">Retiro — C/ Antonio Arias, 4</a></li>
-          <li><a href="#locales">Chueca — C/ Hortaleza, 28</a></li>
-          <li><a href="#locales">Lavapiés — C/ Sombrerete, 1</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <h4>Navegación</h4>
-        <ul class="footer__links">
-          <li><a href="#nosotros">Nuestra Historia</a></li>
-          <li><a href="#carta">La Carta</a></li>
-          <li><a href="#reservas">Reservar Mesa</a></li>
-          <li><a href="#reservas">Pedir a Domicilio</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <h4>Contacto</h4>
-        <ul class="footer__links">
-          <li><a href="mailto:hola@fratelliditalia.es">hola@fratelliditalia.es</a></li>
-          <li><a href="tel:+34912345678">+34 912 345 678 (Retiro)</a></li>
-          <li><a href="tel:+34912345679">+34 912 345 679 (Chueca)</a></li>
-          <li><a href="tel:+34912345680">+34 912 345 680 (Lavapiés)</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <p>© 2025 Fratelli d'Italia S.L. — Todos los derechos reservados</p>
-      <div class="footer__legal">
-        <a href="#">Aviso Legal</a>
-        <a href="#">Política de Privacidad</a>
-        <a href="#">Política de Cookies</a>
-      </div>
-    </div>
-  </div>
+  <p class="foot__legal">© <span id="year">2026</span> Fratelli d’Italia · Madrid</p>
 </footer>
 
-<!-- ======= JAVASCRIPT ======= -->
 <script>
-  // Navbar scroll
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
-  });
+  document.documentElement.classList.add('js');
 
-  // Mobile menu
-  const burgerBtn   = document.getElementById('burgerBtn');
-  const closeMenu   = document.getElementById('closeMenu');
-  const mobileMenu  = document.getElementById('mobileMenu');
-  const mmLinks     = document.querySelectorAll('.mm-link');
+  // Menú móvil
+  const drawer = document.getElementById('drawer');
+  const openBtn = document.getElementById('menuOpen');
+  const closeBtn = document.getElementById('menuClose');
+  const setDrawer = (open) => {
+    drawer.classList.toggle('open', open);
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    (open ? closeBtn : openBtn).focus();
+  };
+  openBtn.addEventListener('click', () => setDrawer(true));
+  closeBtn.addEventListener('click', () => setDrawer(false));
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setDrawer(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) setDrawer(false); });
 
-  burgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
-  closeMenu.addEventListener('click', () => mobileMenu.classList.remove('open'));
-  mmLinks.forEach(l => l.addEventListener('click', () => mobileMenu.classList.remove('open')));
-
-  // Menu tabs
-  document.querySelectorAll('.tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+  // Pestañas de la carta (patrón ARIA tabs con flechas)
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const select = (tab) => {
+    tabs.forEach(t => {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+  };
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', e => {
+      const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
+      if (!d) return;
+      const next = tabs[(i + d + tabs.length) % tabs.length];
+      select(next); next.focus();
     });
   });
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.12 });
+  // Estado en vivo de cada local (hora de Madrid). Minutos desde medianoche; 0 = domingo.
+  const H = (a, b) => [a * 60, b * 60];
+  const HOURS = {
+    retiro:   { 2: [H(13,16), H(20,23)], 3: [H(13,16), H(20,23)], 4: [H(13,16), H(20,23)], 5: [H(13,23)], 6: [H(13,23)], 0: [H(13,23)] },
+    chueca:   { 2: [H(13,16), H(20,23.5)], 3: [H(13,16), H(20,23.5)], 4: [H(13,16), H(20,23.5)], 5: [H(13,23.5)], 6: [H(13,23.5)], 0: [H(13,23.5)] },
+    lavapies: { 2: [H(13,23.5)], 3: [H(13,23.5)], 4: [H(13,23.5)], 5: [H(13,23.5)], 6: [H(13,23.5)], 0: [H(13,23.5)] }
+  };
+  const DAYS = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const fmt = m => `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`;
 
-  reveals.forEach(el => observer.observe(el));
+  function madridNow() {
+    const parts = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Madrid', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date());
+    const get = t => parts.find(p => p.type === t).value;
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+    return { day, min: Number(get('hour')) * 60 + Number(get('minute')) };
+  }
+
+  function statusFor(key) {
+    const { day, min } = madridNow();
+    const today = HOURS[key][day] || [];
+    const open = today.find(([a, b]) => min >= a && min < b);
+    if (open) return { open: true, text: `Abierto · hasta las ${fmt(open[1])}` };
+    const later = today.find(([a]) => min < a);
+    if (later) return { open: false, text: `Cerrado · abre hoy a las ${fmt(later[0])}` };
+    for (let i = 1; i <= 7; i++) {
+      const d = (day + i) % 7, slots = HOURS[key][d];
+      if (slots) return { open: false, text: `Cerrado · abre ${i === 1 ? 'mañana' : 'el ' + DAYS[d]} a las ${fmt(slots[0][0])}` };
+    }
+    return { open: false, text: 'Cerrado' };
+  }
+
+  function paintStatus(first) {
+    document.querySelectorAll('[data-status]').forEach(el => {
+      const s = statusFor(el.dataset.status);
+      const [state, rest] = s.text.split(' · ');
+      el.innerHTML = `<b>${state}</b><small>${rest}</small>`;
+      el.dataset.open = String(s.open);
+      if (first) el.classList.add('stamped');
+    });
+  }
+  paintStatus(true);
+  setInterval(paintStatus, 60000);
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
