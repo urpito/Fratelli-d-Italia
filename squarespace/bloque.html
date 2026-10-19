@@ -1,0 +1,622 @@
+<style>
+@font-face{ font-family: "Playfair Display"; font-style: normal; font-weight: 400 900; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/fonts/playfair-display.woff2) format("woff2"); }
+@font-face{ font-family: "Playfair Display"; font-style: italic; font-weight: 400 900; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/fonts/playfair-display-italic.woff2) format("woff2"); }
+@font-face{ font-family: "Lato"; font-style: normal; font-weight: 400; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/fonts/lato-400.woff2) format("woff2"); }
+@font-face{ font-family: "Lato"; font-style: normal; font-weight: 700; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/fonts/lato-700.woff2) format("woff2"); }
+@font-face{ font-family: "Lato"; font-style: normal; font-weight: 900; font-display: swap; src: url(https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/fonts/lato-900.woff2) format("woff2"); }
+#fdi{--cream:       #FBF5EA;
+      --cream-dark:  #F3E7D3;
+      --paper:       #FFFDF8;
+      --red:         #B5352A;
+      --red-dark:    #8F2A21;
+      --green:       #2D6A4F;
+      --green-soft:  #E3EEE6;
+      --copper:      #94561F;
+      --charcoal:    #2A211B;
+      --text:        #3D2B1F;
+      --text-light:  #715443;
+      --line:        rgba(61, 43, 31, .14);
+
+      --serif: "Playfair Display", Georgia, serif;
+      --sans:  "Lato", system-ui, sans-serif;
+
+      --radius: 6px;
+      --shadow:    0 2px 4px rgba(44, 28, 20, .05), 0 12px 32px -8px rgba(44, 28, 20, .16);
+      --shadow-lg: 0 4px 8px rgba(44, 28, 20, .06), 0 24px 56px -12px rgba(44, 28, 20, .28);
+      --ease-out: cubic-bezier(.16, 1, .3, 1);
+      --gutter: clamp(1rem, 5vw, 2.5rem);}
+#fdi *, #fdi *::before, #fdi *::after{box-sizing: border-box; margin: 0; padding: 0;}
+html{scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%;}
+#fdi{font-family: var(--sans); font-size: 1.0625rem; line-height: 1.7; color: var(--text); background: var(--cream); caret-color: var(--red);}
+#fdi img{display: block; max-width: 100%; height: auto;}
+#fdi a{color: inherit; text-decoration: none;}
+#fdi ::selection{background: var(--red); color: #fff;}
+#fdi :focus-visible{outline: 3px solid var(--red); outline-offset: 3px; border-radius: 2px;}
+html{scrollbar-color: #C9B79C var(--cream-dark);}
+#fdi .skip{position: absolute; left: 1rem; top: 0; z-index: 300; background: var(--charcoal); color: #fff; padding: .75rem 1rem; border-radius: var(--radius); transform: translateY(-140%);}
+#fdi .skip:focus{transform: translateY(1rem);}
+#fdi .container{width: min(1180px, 100% - 2 * var(--gutter)); margin-inline: auto;}
+#fdi .section{padding: clamp(4.5rem, 9vw, 7.5rem) 0;}
+#fdi .section--alt{background: var(--cream-dark);}
+#fdi h1, #fdi h2, #fdi h3, #fdi h4{font-family: var(--serif); line-height: 1.12; color: var(--charcoal); font-weight: 700;}
+#fdi .title{font-size: clamp(2.2rem, 4.4vw, 3.4rem); letter-spacing: -.01em; text-wrap: balance;}
+#fdi .title em{font-style: italic; font-weight: 500; color: var(--red);}
+#fdi .lede{font-size: clamp(1.05rem, 1.4vw, 1.18rem); color: var(--text-light); max-width: 60ch; text-wrap: pretty;}
+#fdi .head{margin-bottom: clamp(2.5rem, 5vw, 3.5rem);}
+#fdi .head--center{text-align: center;}
+#fdi .head--center .lede{margin-inline: auto;}
+#fdi .head .title{margin-bottom: 1rem;}
+#fdi .tricolore{display: flex; gap: 4px;}
+#fdi .tricolore span{width: 28px; height: 4px; border-radius: 2px;}
+#fdi .tricolore span:nth-child(1){background: #009246;}
+#fdi .tricolore span:nth-child(2){background: #F4F1EA; box-shadow: inset 0 0 0 1px rgba(0,0,0,.08);}
+#fdi .tricolore span:nth-child(3){background: #CE2B37;}
+#fdi .btn{display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      min-height: 3.1rem; padding: .8rem 1.6rem; border-radius: var(--radius); border: 2px solid transparent;
+      font-family: var(--sans); font-weight: 700; font-size: .95rem; letter-spacing: .03em; line-height: 1; cursor: pointer; white-space: nowrap;
+      transition: background-color .25s var(--ease-out), border-color .25s var(--ease-out), color .25s var(--ease-out), transform .25s var(--ease-out), box-shadow .25s var(--ease-out);}
+#fdi .btn:hover{transform: translateY(-2px);}
+#fdi .btn:active{transform: none;}
+#fdi .btn svg{flex: none;}
+#fdi .btn-primary{background: var(--red); color: #fff;}
+#fdi .btn-primary:hover{background: var(--red-dark); box-shadow: 0 10px 22px -8px rgba(143, 42, 33, .6);}
+#fdi .btn-light{background: transparent; color: #fff; border-color: rgba(255, 255, 255, .75);}
+#fdi .btn-light:hover{background: rgba(255, 255, 255, .14); border-color: #fff;}
+#fdi .btn-ghost{background: transparent; color: var(--text); border-color: var(--line);}
+#fdi .btn-ghost:hover{border-color: var(--red); color: var(--red);}
+#fdi .btn-cream{background: var(--cream); color: var(--charcoal);}
+#fdi .btn-cream:hover{background: #fff;}
+#fdi .btn-sm{min-height: 2.7rem; padding: .6rem 1.1rem; font-size: .88rem;}
+#fdi .navbar{position: absolute; inset: 0 0 auto; z-index: 100; padding: 1.1rem 0; transition: background-color .35s var(--ease-out), box-shadow .35s var(--ease-out);}
+#fdi .navbar.scrolled{background: rgba(251, 245, 234, .97); box-shadow: 0 1px 0 var(--line), 0 8px 24px -16px rgba(44, 28, 20, .35); padding: .6rem 0;}
+#fdi .navbar__inner{display: flex; align-items: center; gap: 2rem;}
+#fdi .brand{display: flex; align-items: center; gap: .7rem; margin-right: auto; color: #fff; transition: color .35s;}
+#fdi .brand img{width: 34px; height: auto; filter: drop-shadow(0 1px 2px rgba(0,0,0,.25));}
+#fdi .brand__name{font-family: var(--serif); font-weight: 700; font-size: 1.4rem; line-height: 1; display: block; white-space: nowrap;}
+#fdi .brand__sub{display: block; white-space: nowrap; font-size: .7rem; letter-spacing: .22em; text-transform: uppercase; opacity: .8; margin-top: .3rem;}
+#fdi .navbar.scrolled .brand{color: var(--charcoal);}
+#fdi .navbar.scrolled .brand__name{color: var(--red);}
+#fdi .navbar.scrolled .brand img{filter: none;}
+#fdi .nav{display: flex; gap: 2.2rem; list-style: none;}
+#fdi .nav a{font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255, 255, 255, .9); padding-block: .5rem; background: linear-gradient(currentColor, currentColor) left 85% / 0 1.5px no-repeat; transition: background-size .3s var(--ease-out), color .3s;}
+#fdi .nav a:hover{background-size: 100% 1.5px;}
+#fdi .navbar.scrolled .nav a{color: var(--text);}
+#fdi .navbar.scrolled .nav a:hover{color: var(--red);}
+#fdi .menu-btn{display: none; align-items: center; gap: .5rem; min-height: 44px; padding: .4rem .8rem; background: none; border: 1.5px solid rgba(255,255,255,.7); border-radius: var(--radius); color: #fff; font: 700 .8rem/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; cursor: pointer;}
+#fdi .navbar.scrolled .menu-btn{color: var(--charcoal); border-color: var(--line);}
+#fdi .drawer{position: fixed; inset: 0; z-index: 200; background: var(--cream); padding: 1.1rem var(--gutter) 2rem; display: flex; flex-direction: column; gap: 2rem; opacity: 0; visibility: hidden; transform: translateY(-1rem); transition: opacity .35s var(--ease-out), transform .35s var(--ease-out), visibility 0s .35s;}
+#fdi .drawer:target{opacity: 1; visibility: visible; transform: none; transition: opacity .35s var(--ease-out), transform .35s var(--ease-out);}
+#fdi .drawer__top{display: flex; justify-content: space-between; align-items: center;}
+#fdi .drawer__top .brand{color: var(--charcoal);}
+#fdi .drawer__top .brand__name{color: var(--red);}
+#fdi .drawer__top .menu-btn{display: inline-flex; color: var(--charcoal); border-color: var(--line);}
+#fdi .drawer nav{display: flex; flex-direction: column;}
+#fdi .drawer nav a{font-family: var(--serif); font-size: 2.2rem; font-weight: 600; color: var(--charcoal); padding: .55rem 0; border-bottom: 1px solid var(--line);}
+#fdi .drawer .btn{align-self: stretch;}
+#fdi .hero{position: relative; min-height: min(calc(100svh - 4.5rem), 900px); display: flex; flex-direction: column; color: #fff;}
+#fdi .hero__media{position: absolute; inset: 0; overflow: hidden; background: var(--charcoal);}
+#fdi .hero__media img{width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.06);}
+#fdi .hero__media::after{content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(28, 18, 12, .88) 0%, rgba(28, 18, 12, .62) 42%, rgba(28, 18, 12, .2) 100%), linear-gradient(0deg, rgba(28, 18, 12, .55) 0%, rgba(28, 18, 12, 0) 35%);}
+#fdi .hero__content{position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 8.5rem 0 3rem;}
+#fdi .hero__title{color: #fff; font-size: clamp(3.2rem, 7.4vw, 6rem); font-weight: 800; line-height: 1; letter-spacing: -.02em; margin: 1.5rem 0 .9rem;}
+#fdi .hero__motto{font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.4vw, 1.9rem); color: #F3E2C6; line-height: 1.3;}
+#fdi .hero__lede{color: rgba(255, 255, 255, .86); max-width: 46ch; margin: 1.5rem 0 2.2rem; font-size: clamp(1.05rem, 1.4vw, 1.2rem);}
+#fdi .hero__actions{display: flex; flex-wrap: wrap; gap: .9rem;}
+#fdi .quarters{position: relative; z-index: 3; margin-bottom: -3.5rem;}
+#fdi .quarters ol{list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow-lg); overflow: hidden;}
+#fdi .quarters li + li{border-left: 1px solid var(--line);}
+#fdi .quarters a{display: grid; grid-template-columns: 1fr auto; align-items: center; gap: .2rem 1rem; padding: 1.15rem 1.5rem; color: var(--text); height: 100%; transition: background-color .25s var(--ease-out);}
+#fdi .quarters a:hover{background: #FFF7EC;}
+#fdi .q-name{font-family: var(--serif); font-weight: 700; font-size: 1.3rem; color: var(--charcoal);}
+#fdi .q-kind{grid-column: 1; font-size: .85rem; color: var(--text-light);}
+#fdi .q-arrow{grid-row: 1 / span 3; grid-column: 2; color: var(--red); transition: transform .25s var(--ease-out);}
+#fdi .quarters a:hover .q-arrow{transform: translateX(3px);}
+#fdi .quarters .status{grid-column: 1; justify-self: start; margin-top: .45rem;}
+#fdi #historia{padding-top: calc(clamp(4.5rem, 9vw, 7.5rem) + 3.5rem);}
+#fdi .about{display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(3rem, 6vw, 6rem); align-items: center;}
+#fdi .about__visual{position: relative; padding: 0 2.5rem 2.5rem 0;}
+#fdi .about__main{width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow-lg);}
+#fdi .about__accent{position: absolute; right: 0; bottom: 0; width: 44%; aspect-ratio: 1; object-fit: cover; border-radius: var(--radius); border: 6px solid var(--cream); box-shadow: var(--shadow);}
+#fdi .about__seal{position: absolute; top: -1.5rem; left: -1.5rem; width: 116px; height: 116px; border-radius: 50%; background: var(--cream); box-shadow: var(--shadow); display: grid; place-items: center;}
+#fdi .about__seal img{width: 52px; height: auto;}
+#fdi .about__text .title{margin: 1.25rem 0 1.25rem;}
+#fdi .duo{display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.25rem; align-items: start; margin-top: 2.25rem;}
+#fdi .duo h3{font-size: 1.45rem;}
+#fdi .duo .origin{font-family: var(--serif); font-style: italic; font-size: .98rem; color: var(--copper); margin: .2rem 0 .6rem;}
+#fdi .duo p:last-child{font-size: .96rem; color: var(--text-light);}
+#fdi .duo__amp{font-family: var(--serif); font-style: italic; font-size: 3.4rem; line-height: 1; color: var(--red); padding-top: .1rem;}
+#fdi .duo__sum{margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-family: var(--serif); font-style: italic; font-size: clamp(1.2rem, 1.9vw, 1.45rem); line-height: 1.45; color: var(--charcoal);}
+#fdi .pillars{list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: clamp(4rem, 8vw, 6rem); background: var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);}
+#fdi .pillar{background: var(--paper); padding: 1.75rem 1.6rem 1.9rem;}
+#fdi .pillar__icon{width: 46px; height: 46px; border-radius: 50%; display: grid; place-items: center; background: #F7E3DE; color: var(--red); margin-bottom: 1.1rem;}
+#fdi .pillar h3{font-size: 1.15rem; margin-bottom: .4rem;}
+#fdi .pillar p{font-size: .92rem; color: var(--text-light); line-height: 1.6;}
+#fdi .gallery{display: grid; grid-template-columns: repeat(5, 1fr); height: clamp(220px, 24vw, 340px);}
+#fdi .gallery figure{position: relative; overflow: hidden;}
+#fdi .gallery img{width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease-out), filter .8s var(--ease-out);}
+#fdi .gallery figure:hover img{transform: scale(1.06); filter: saturate(1.1);}
+#fdi .gallery figcaption{position: absolute; inset: auto 0 0; padding: 2.5rem 1rem .9rem; background: linear-gradient(0deg, rgba(28, 18, 12, .72), rgba(28, 18, 12, 0)); color: #fff; font-family: var(--serif); font-style: italic; font-size: 1.02rem;}
+#fdi .locations{display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(1.25rem, 2.5vw, 2rem);}
+#fdi .loc{background: var(--paper); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; scroll-margin-top: 6rem; transition: transform .35s var(--ease-out), box-shadow .35s var(--ease-out);}
+#fdi .loc:hover{transform: translateY(-4px); box-shadow: var(--shadow-lg);}
+#fdi .loc__media{position: relative;}
+#fdi .loc__media img{width: 100%; aspect-ratio: 4 / 3; object-fit: cover;}
+#fdi .badge{position: absolute; top: 1rem; left: 1rem; padding: .35rem .8rem; border-radius: 999px; background: var(--paper); font-size: .72rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,.15);}
+#fdi .badge--rest{color: var(--green);}
+#fdi .badge--take{color: var(--red);}
+#fdi .loc__body{padding: 1.6rem 1.6rem 1.75rem; display: flex; flex-direction: column; flex: 1;}
+#fdi .loc__name{font-size: 1.75rem;}
+#fdi .loc__tag{font-family: var(--serif); font-style: italic; color: var(--text-light); font-size: 1rem; line-height: 1.5; margin: .35rem 0 1rem;}
+#fdi .info{list-style: none; display: grid; gap: .7rem; padding-top: 1.25rem; border-top: 1px solid var(--line); margin-bottom: 1.6rem; font-size: .93rem;}
+#fdi .info li{display: grid; grid-template-columns: 18px 1fr; gap: .7rem; align-items: start;}
+#fdi .info svg{color: var(--copper); margin-top: .25rem;}
+#fdi .info a{text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .2em;}
+#fdi .info a:hover{text-decoration-color: var(--red); color: var(--red);}
+#fdi .hours{font-variant-numeric: tabular-nums lining-nums;}
+#fdi .loc__actions{margin-top: auto; display: flex; flex-wrap: wrap; gap: .7rem;}
+#fdi .menu{position: relative;}
+#fdi .menu__radio{position: absolute; opacity: 0; pointer-events: none;}
+#fdi .tabs{display: flex; justify-content: center; flex-wrap: wrap; gap: .25rem; border-bottom: 1px solid var(--line); margin-bottom: 2.5rem;}
+#fdi .tab{font: 700 .85rem/1 var(--sans); letter-spacing: .12em; text-transform: uppercase; color: var(--text-light); background: none; border: 0; border-bottom: 3px solid transparent; margin-bottom: -1px; padding: 1rem 1.4rem; min-height: 48px; display: inline-flex; align-items: center; cursor: pointer; transition: color .2s, border-color .2s;}
+#fdi .tab:hover{color: var(--red);}
+#fdi #c-antipasti:checked ~ .tabs [for="c-antipasti"], #fdi #c-pasta:checked ~ .tabs [for="c-pasta"], #fdi #c-pizze:checked ~ .tabs [for="c-pizze"], #fdi #c-dolci:checked ~ .tabs [for="c-dolci"]{color: var(--red); border-bottom-color: var(--red);}
+#fdi #c-antipasti:focus-visible ~ .tabs [for="c-antipasti"], #fdi #c-pasta:focus-visible ~ .tabs [for="c-pasta"], #fdi #c-pizze:focus-visible ~ .tabs [for="c-pizze"], #fdi #c-dolci:focus-visible ~ .tabs [for="c-dolci"]{outline: 3px solid var(--red); outline-offset: 2px;}
+#fdi .panel{display: none; background: var(--paper); border-radius: var(--radius); box-shadow: var(--shadow); padding: clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 4vw, 3.5rem); grid-template-columns: 1fr 1fr; column-gap: clamp(2rem, 5vw, 4.5rem); align-items: start;}
+#fdi #c-antipasti:checked ~ #p-antipasti, #fdi #c-pasta:checked ~ #p-pasta, #fdi #c-pizze:checked ~ #p-pizze, #fdi #c-dolci:checked ~ #p-dolci{display: grid;}
+#fdi .menu__group{grid-column: 1 / -1; font-size: clamp(1.4rem, 2.4vw, 1.75rem); font-style: italic; font-weight: 600; color: var(--red); padding-top: 2rem; margin-bottom: .2rem;}
+#fdi .menu__group:first-child{padding-top: 0;}
+#fdi .dish{padding: 1.15rem 0; border-bottom: 1px solid var(--line);}
+#fdi .dish__line{display: flex; align-items: baseline; gap: .6rem;}
+#fdi .dish__name{font-size: 1.2rem; font-weight: 700;}
+#fdi .dish__dots{flex: 1; min-width: 1.5rem; border-bottom: 2px dotted #CDB99B; transform: translateY(-.3em);}
+#fdi .dish__price{font-family: var(--serif); font-weight: 700; font-size: 1.15rem; color: var(--red); white-space: nowrap; font-variant-numeric: lining-nums tabular-nums;}
+#fdi .dish__desc{font-size: .93rem; color: var(--text-light); margin-top: .3rem; max-width: 50ch; line-height: 1.55;}
+#fdi .tag{display: inline-block; margin-top: .55rem; padding: .2rem .6rem; border-radius: 999px; font-size: .72rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase;}
+#fdi .tag--star{background: #F6EBDD; color: var(--copper);}
+#fdi .tag--chef{background: #F7E3DE; color: var(--red-dark);}
+#fdi .tag--veg{background: var(--green-soft); color: var(--green);}
+#fdi .tag--sardo{background: #F7E3DE; color: var(--red-dark);}
+#fdi .tag + .tag{margin-left: .35rem;}
+#fdi .menu__note{margin: 2rem auto 0; max-width: 62ch; text-align: center; font-family: var(--serif); font-style: italic; color: var(--text-light);}
+#fdi .reservas{position: relative; isolation: isolate; padding: clamp(5rem, 10vw, 8rem) 0; text-align: center; color: #fff;}
+#fdi .reservas__bg{position: absolute; inset: 0; z-index: -1; overflow: hidden;}
+#fdi .reservas__bg img{width: 100%; height: 100%; object-fit: cover;}
+#fdi .reservas__bg::after{content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(36, 22, 14, .92) 0%, rgba(110, 30, 26, .84) 100%);}
+#fdi .reservas .tricolore{justify-content: center; margin-bottom: 1.5rem;}
+#fdi .reservas__title{color: #fff; font-size: clamp(2.6rem, 5.5vw, 4.2rem);}
+#fdi .reservas__title em{font-style: italic; font-weight: 500; color: #F3C9A5;}
+#fdi .reservas__sub{color: rgba(255, 255, 255, .8); max-width: 52ch; margin: 1rem auto 3rem; font-size: 1.1rem;}
+#fdi .orders{display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 860px; margin-inline: auto; text-align: left;}
+#fdi .order{background: rgba(20, 12, 8, .45); border: 1px solid rgba(255, 255, 255, .16); border-radius: var(--radius); padding: 2.1rem 2rem; display: flex; flex-direction: column;}
+#fdi .order__icon{width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .1); color: #F3C9A5; margin-bottom: 1.1rem;}
+#fdi .order h3{color: #fff; font-size: 1.5rem;}
+#fdi .order p{color: rgba(255, 255, 255, .78); font-size: .95rem; margin: .5rem 0 1.5rem; flex: 1;}
+#fdi .order__btns{display: flex; flex-wrap: wrap; gap: .7rem;}
+#fdi .order__btns .btn{flex: 1 1 auto;}
+#fdi .foot{background: var(--charcoal); color: #CBBBA5; padding: clamp(3.5rem, 7vw, 5rem) 0 2rem; font-size: .93rem;}
+#fdi .foot__grid{display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem;}
+#fdi .foot__brand{display: flex; gap: 1.1rem; align-items: flex-start;}
+#fdi .foot__seal{flex: none; width: 64px; height: 64px; border-radius: 50%; background: var(--cream); display: grid; place-items: center;}
+#fdi .foot__seal img{width: 30px; height: auto;}
+#fdi .foot__brand strong{display: block; font-family: var(--serif); font-size: 1.45rem; color: #fff; margin-bottom: .35rem; line-height: 1.2;}
+#fdi .foot h2{font-family: var(--sans); font-size: .75rem; font-weight: 900; letter-spacing: .2em; text-transform: uppercase; color: #fff; margin-bottom: 1rem;}
+#fdi .foot ul{list-style: none; display: grid; gap: .55rem;}
+#fdi .foot a:hover{color: #fff; text-decoration: underline; text-underline-offset: .2em;}
+#fdi .foot__legal{margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255, 255, 255, .12); font-size: .82rem; color: #A39580;}
+@media (prefers-reduced-motion: no-preference){@keyframes heroZoom{ from { transform: scale(1.12); } to { transform: scale(1.02); } }
+@keyframes rise{ from { opacity: 0; transform: translateY(18px); filter: blur(4px); } to { opacity: 1; transform: none; filter: none; } }}
+@media (max-width: 1000px){#fdi .nav{gap: 1.4rem;}
+#fdi .brand__sub{display: none;}
+#fdi .quarters a{padding: 1rem 1.1rem;}
+#fdi .pillars{grid-template-columns: repeat(2, 1fr);}
+#fdi .locations{grid-template-columns: 1fr; max-width: 620px; margin-inline: auto;}
+#fdi .gallery{grid-template-columns: repeat(5, 70%); height: auto; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;}
+#fdi .gallery figure{aspect-ratio: 4 / 5; scroll-snap-align: start;}}
+@media (max-width: 860px){#fdi .nav, #fdi .navbar__cta{display: none;}
+#fdi .menu-btn{display: inline-flex;}
+#fdi .about{grid-template-columns: 1fr;}
+#fdi .about__visual{max-width: 520px; margin-left: 1.5rem;}
+#fdi .quarters ol{grid-template-columns: 1fr;}
+#fdi .quarters li + li{border-left: 0; border-top: 1px solid var(--line);}
+#fdi .panel{grid-template-columns: 1fr;}
+#fdi .orders{grid-template-columns: 1fr;}
+#fdi .foot__grid{grid-template-columns: 1fr;}}
+@media (max-width: 560px){#fdi{font-size: 1rem;}
+#fdi .brand__sub{display: none;}
+#fdi .brand__name{white-space: nowrap; font-size: 1.25rem;}
+#fdi .hero__content{padding-top: 6.5rem;}
+#fdi .hero__actions .btn{flex: 1 1 100%;}
+#fdi .about__seal{width: 92px; height: 92px;}
+#fdi .about__seal img{width: 40px;}
+#fdi .duo{grid-template-columns: 1fr; gap: .5rem;}
+#fdi .duo__amp{font-size: 2.6rem;}
+#fdi .pillars{grid-template-columns: 1fr;}
+#fdi .gallery{grid-template-columns: repeat(5, 82%);}
+#fdi .tab{flex: 1 1 0; padding: .9rem .3rem; letter-spacing: .06em; font-size: .78rem;}
+#fdi .loc__actions .btn{flex: 1 1 auto;}}
+
+html,body{overflow-x:clip}
+#header,#footer-sections,.header-announcement-bar-wrapper{display:none!important}
+.page-section:has(#fdi),.page-section:has(#fdi) .content-wrapper,.page-section:has(#fdi) .content{padding:0!important;max-width:none!important;min-height:0!important}
+.sqs-block:has(#fdi),.fe-block:has(#fdi){padding:0!important}
+.fluid-engine:has(#fdi){display:block!important}
+.fe-block:has(#fdi){position:static!important;width:auto!important;height:auto!important}
+#fdi{position:relative;width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}
+#fdi p,#fdi h1,#fdi h2,#fdi h3,#fdi h4{margin:0;letter-spacing:normal;text-transform:none}
+#fdi a{text-decoration:none}
+</style>
+<div id="fdi">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="#inicio" class="brand" aria-label="Fratelli d'Italia, inicio">
+      <img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/logo-garibaldi.webp" alt="" width="34" height="66">
+      <span><span class="brand__name">Fratelli d’Italia</span><span class="brand__sub">Ristorante · Pizzeria · Madrid</span></span>
+    </a>
+    <nav aria-label="Principal">
+      <ul class="nav">
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#locales">Locales</a></li>
+        <li><a href="#carta">Carta</a></li>
+      </ul>
+    </nav>
+    <a href="#reservar" class="btn btn-primary btn-sm navbar__cta">Reservar mesa</a>
+    <a class="menu-btn" href="#drawer" id="menuOpen">
+      <svg width="18" height="14" viewBox="0 0 18 14" aria-hidden="true"><path d="M0 1h18M0 7h18M0 13h18" stroke="currentColor" stroke-width="2"/></svg>
+      Menú
+    </a>
+  </div>
+</header>
+<div class="drawer" id="drawer" aria-label="Menú">
+  <div class="drawer__top">
+    <span class="brand"><span><span class="brand__name">Fratelli d’Italia</span></span></span>
+    <a class="menu-btn" href="#inicio" id="menuClose">
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2"/></svg>
+      Cerrar
+    </a>
+  </div>
+  <nav aria-label="Menú móvil">
+    <a href="#historia">Historia</a>
+    <a href="#locales">Locales</a>
+    <a href="#carta">Carta</a>
+  </nav>
+  <a href="#reservar" class="btn btn-primary">Reservar mesa</a>
+  <a href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Pedir a domicilio</a>
+</div>
+<main id="contenido">
+<section class="hero" id="inicio" aria-labelledby="titulo">
+  <div class="hero__media">
+    <img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/frfo.webp" alt="" width="1600" height="900" fetchpriority="high">
+  </div>
+  <div class="container hero__content">
+    <div class="tricolore" aria-hidden="true"><span></span><span></span><span></span></div>
+    <h1 class="hero__title" id="titulo">Fratelli d’Italia</h1>
+    <p class="hero__motto">Due regioni, una cucina — en el corazón de Madrid</p>
+    <p class="hero__lede">Un cocinero sardo y otro de las Marcas se conocieron entre fogones y decidieron cocinar juntos. Pizza, pasta fresca y especialidades sardas desde 2010, en Retiro, Chueca y Lavapiés.</p>
+    <div class="hero__actions">
+      <a href="#reservar" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 10h18"/></svg>
+        Reservar mesa
+      </a>
+      <a href="#carta" class="btn btn-light">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 4.5h11a3 3 0 013 3V20H7a3 3 0 01-3-3z"/><path d="M8 9h6M8 13h6"/></svg>
+        Ver la carta
+      </a>
+    </div>
+  </div>
+  <nav class="container quarters" aria-label="Nuestros tres locales">
+    <ol>
+      <li><a href="#retiro"><span class="q-name">Retiro</span><span class="q-kind">Restaurante · C/ Antonio Arias, 4</span><svg class="q-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li><a href="#chueca"><span class="q-name">Chueca</span><span class="q-kind">Restaurante · C/ Hortaleza, 28</span><svg class="q-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li><a href="#lavapies"><span class="q-name">Lavapiés</span><span class="q-kind">Take away · C/ Sombrerete, 1</span><svg class="q-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+    </ol>
+  </nav>
+</section>
+<section class="section" id="historia" aria-labelledby="h-historia">
+  <div class="container">
+    <div class="about">
+      <div class="about__visual">
+        <div class="about__seal"><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/logo-garibaldi.webp" alt="" width="52" height="100" loading="lazy"></div>
+        <img class="about__main" src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/pizza2.webp" alt="Pizza recién horneada con aceitunas negras, cortada en la mesa junto a un spritz" width="718" height="857" loading="lazy">
+        <img class="about__accent" src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/pizza1.webp" alt="Pizza artesanal sobre una tabla enharinada" width="723" height="857" loading="lazy">
+      </div>
+      <div class="about__text">
+        <div class="tricolore" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h2 class="title" id="h-historia">Hermanos de cocina, <em>no de sangre</em></h2>
+        <p class="lede">Se conocieron trabajando de cocineros en la misma cocina de un restaurante. Compartieron turnos, recetas y largas discusiones sobre cuánto debe reposar una masa. Un día dejaron de discutir y abrieron la suya.</p>
+        <div class="duo">
+          <div>
+            <h3>Sardegna</h3>
+            <p class="origin">La isla</p>
+            <p>Del mar y de los pastores: el pecorino, el pane carasau que cruje como papel y la costumbre de no tener nunca prisa en la mesa.</p>
+          </div>
+          <span class="duo__amp" aria-hidden="true">&amp;</span>
+          <div>
+            <h3>Marche</h3>
+            <p class="origin">Entre los Apeninos y el Adriático</p>
+            <p>De una región que se toma muy en serio la pasta al huevo, las olive all’ascolana y el trabajo hecho a mano, sin atajos.</p>
+          </div>
+        </div>
+        <p class="duo__sum">Fratelli d’Italia: dos regiones, una cocina y tres direcciones en el corazón de Madrid.</p>
+      </div>
+    </div>
+    <ul class="pillars" aria-label="Lo que no negociamos">
+      <li class="pillar">
+        <span class="pillar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V9"/><path d="M12 13c-2.5 0-4-1.6-4-4 2.5 0 4 1.6 4 4zM12 13c2.5 0 4-1.6 4-4-2.5 0-4 1.6-4 4zM12 8.5c-2 0-3.2-1.3-3.2-3.2 2 0 3.2 1.3 3.2 3.2zM12 8.5c2 0 3.2-1.3 3.2-3.2-2 0-3.2 1.3-3.2 3.2zM12 17.5c-2.5 0-4-1.6-4-4 2.5 0 4 1.6 4 4zM12 17.5c2.5 0 4-1.6 4-4-2.5 0-4 1.6-4 4z"/></svg></span>
+        <h3>Especialidades sardas</h3>
+        <p>Malloreddus, fregola, pecorino y pane carasau: la isla, en la mesa.</p>
+      </li>
+      <li class="pillar">
+        <span class="pillar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14" r="7"/><path d="M12 7V4M9 7.5c1-1.5 5-1.5 6 0M12 7l-2.5-2M12 7l2.5-2"/></svg></span>
+        <h3>Pasta fresca</h3>
+        <p>Ravioli, mezzelune, fiocchi y pappardelle, de pasta fresca.</p>
+      </li>
+      <li class="pillar">
+        <span class="pillar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l9-11 9 11z"/><path d="M3 17v2h18v-2"/><circle cx="12" cy="13.5" r="1.3"/><circle cx="16" cy="15" r=".9"/><circle cx="8.5" cy="15.2" r=".9"/></svg></span>
+        <h3>Pizzas individuales</h3>
+        <p>Tradicionales, blancas y gourmet con mozzarella de búfala.</p>
+      </li>
+      <li class="pillar">
+        <span class="pillar__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22c4 0 7-2.8 7-6.8 0-3.6-2.4-5.6-3.6-8.7-.5 2.2-1.6 3.3-2.6 3.8C12.9 7 11.6 4 9 2c.3 3.5-4 6.4-4 11.2C5 19.2 8 22 12 22z"/><path d="M12 22c-1.8 0-3-1.3-3-3 0-2 1.6-2.8 2.2-4.6.9 1 2.2 1.6 2.2 1.6.9-.8 1.2-1.6 1.2-1.6.4.9.4 1.8.4 2.6 0 2.8-1.2 5-3 5z"/></svg></span>
+        <h3>Desde 2010</h3>
+        <p>Más de quince años cocinando italiano en el centro de Madrid.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="gallery" aria-label="Algunos de nuestros platos">
+  <figure><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/pizza3.webp" alt="Bandeja de pizza con jamón, salami y pesto" width="719" height="862" loading="lazy"><figcaption>Le nostre pizze</figcaption></figure>
+  <figure><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/linguine1.webp" alt="Fuente de pasta con marisco, gambas y mejillones" width="680" height="853" loading="lazy"><figcaption>Pasta ai frutti di mare</figcaption></figure>
+  <figure><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/carpaccio1.webp" alt="Carpaccio con rúcula, lascas de parmesano y limón" width="677" height="771" loading="lazy"><figcaption>Carpaccio di bresaola</figcaption></figure>
+  <figure><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/berenjena1.webp" alt="Cazuela de berenjena al horno con tomate y mozzarella gratinada" width="697" height="876" loading="lazy"><figcaption>Parmigiana di melanzane</figcaption></figure>
+  <figure><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/tiramisu1.webp" alt="Tiramisú casero espolvoreado con cacao y virutas de chocolate" width="675" height="877" loading="lazy"><figcaption>Tiramisù</figcaption></figure>
+</section>
+<section class="section section--alt" id="locales" aria-labelledby="h-locales">
+  <div class="container">
+    <div class="head head--center">
+      <h2 class="title" id="h-locales">Tres direcciones <em>en Madrid</em></h2>
+      <p class="lede">Dos restaurantes para sentarse sin prisa y un take away para llevarte nuestras pizzas a casa. Misma cocina, mismas recetas.</p>
+    </div>
+    <div class="locations">
+      <article class="loc" id="retiro" aria-labelledby="n-retiro">
+        <div class="loc__media">
+          <img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/local1.webp" alt="Comedor del local de Retiro: paredes azules, arcos y suelo hidráulico" width="690" height="891" loading="lazy">
+          <span class="badge badge--rest">Restaurante</span>
+        </div>
+        <div class="loc__body">
+          <h3 class="loc__name" id="n-retiro">Retiro</h3>
+          <p class="loc__tag">El clásico. Arte en las paredes, manteles blancos y sabor sin compromiso.</p>
+          <ul class="info">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>C/ Antonio Arias, 4 · 28009 Madrid</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="hours">Mar–Jue 13–16 h · 20–23 h<br>Vie–Dom 13–23 h · Lunes cerrado</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><a href="tel:+34919286177">91 928 61 77</a></li>
+          </ul>
+          <div class="loc__actions">
+            <a class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/msh8fSo1kl4?source=pa&amp;opi=79508299&amp;hl=es-ES&amp;gei=ZdEAatvKOMuohbIP0oLTqQQ&amp;sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m17!1s0xd4229f72731aca1:0xeee8689235b8ea0e!3m12!1m3!1d397.4487276812623!2d-3.67138669496352!3d40.41750355577265!2m3!1f0!2f0!3f0!3m2!1i1432!2i956!4f13.1!4m2!3d40.417617329033085!4d-3.671579360961914!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m2!1sYNEAapXqCdOkhbIP6P_r-Qs!7e81!15m111!1m29!4e2!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1382!2i0!2m2!1i1432!2i956!1m6!1m2!1i0!2i0!2m2!1i1432!2i20!1m6!1m2!1i0!2i936!2m2!1i1432!2i956!22m2!1e81!8e1!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria%26q%3DFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria">Reservar en Retiro</a>
+            <a class="btn btn-ghost btn-sm" href="https://maps.google.com?q=C+Antonio+Arias+4+Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+          </div>
+        </div>
+      </article>
+      <article class="loc" id="chueca" aria-labelledby="n-chueca">
+        <div class="loc__media">
+          <img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/local2.webp" alt="Comedor del local de Chueca: papel pintado, lámparas colgantes y mesas de madera" width="906" height="602" loading="lazy">
+          <span class="badge badge--rest">Restaurante</span>
+        </div>
+        <div class="loc__body">
+          <h3 class="loc__name" id="n-chueca">Chueca</h3>
+          <p class="loc__tag">En pleno Chueca: platos tradicionales de Cerdeña y del resto de Italia, como en casa.</p>
+          <ul class="info">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>C/ Hortaleza, 28 · 28004 Madrid</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="hours">Mar–Jue 13–16 h · 20–23:30 h<br>Vie–Dom 13–23:30 h · Lunes cerrado</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><a href="tel:+34915154106">91 515 41 06</a></li>
+          </ul>
+          <div class="loc__actions">
+            <a class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/crwdRvjI9Qc?source=pa&amp;opi=79508299&amp;hl=es-ES&amp;gei=YtMAar_5NYu5hbIP5feAiA8&amp;sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m20!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!3m12!1m3!1d3179.5695535290306!2d-3.6709769949375377!3d40.41793242652879!2m3!1f0!2f0!3f0!3m2!1i1912!2i956!4f13.1!4m2!3d40.421588299999996!4d-3.7000886!5e0!9e0!11s/g/11cs241b9r!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m6!1sYNEAapXqCdOkhbIP6P_r-Qs:119!2s1i:0,t:6986,p:YNEAapXqCdOkhbIP6P_r-Qs:119!7e81!12e15!17sYNEAapXqCdOkhbIP6P_r-Qs:122!18e3!15m110!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1862!2i0!2m2!1i1912!2i956!1m6!1m2!1i0!2i0!2m2!1i1912!2i20!1m6!1m2!1i0!2i936!2m2!1i1912!2i956!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid%26q%3DFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid">Reservar en Chueca</a>
+            <a class="btn btn-ghost btn-sm" href="https://www.google.es/maps/place/Fratelli+d'Italia+Chueca+%7C+RISTORANTE+PIZZERIA/@40.4215883,-3.7026635,868m/data=!3m2!1e3!4b1!4m6!3m5!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!8m2!3d40.4215883!4d-3.7000886!16s%2Fg%2F11cs241b9r" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+          </div>
+        </div>
+      </article>
+      <article class="loc" id="lavapies" aria-labelledby="n-lavapies">
+        <div class="loc__media">
+          <img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/local3.webp" alt="Fachada del local de Lavapiés con la bandera negra de Fratelli d'Italia" width="711" height="543" loading="lazy">
+          <span class="badge badge--take">Take away</span>
+        </div>
+        <div class="loc__body">
+          <h3 class="loc__name" id="n-lavapies">Lavapiés</h3>
+          <p class="loc__tag">Desde 2010 en el castizo Lavapiés: nuestras pizzas y productos artesanales del día, para llevar.</p>
+          <ul class="info">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>C/ Sombrerete, 1 · 28012 Madrid</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="hours">Mar–Dom 13–23:30 h<br>Lunes cerrado · para llevar</span></li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg><a href="tel:+34915275431">91 527 54 31</a></li>
+          </ul>
+          <div class="loc__actions">
+            <a class="btn btn-primary btn-sm" href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" target="_blank" rel="noopener noreferrer">Pedir a domicilio</a>
+            <a class="btn btn-ghost btn-sm" href="https://maps.google.com?q=C+Sombrerete+1+Madrid" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="section" id="carta" aria-labelledby="h-carta">
+  <div class="container">
+    <div class="head head--center">
+      <h2 class="title" id="h-carta">Sabores que <em>cuentan historias</em></h2>
+      <p class="lede">Nuestra carta de salón, con especialidades de Cerdeña. Todas las pizzas son individuales.</p>
+    </div>
+    <div class="menu">
+    <input class="menu__radio" type="radio" name="carta" id="c-antipasti" checked>
+    <input class="menu__radio" type="radio" name="carta" id="c-pasta">
+    <input class="menu__radio" type="radio" name="carta" id="c-pizze">
+    <input class="menu__radio" type="radio" name="carta" id="c-dolci">
+    <div class="tabs" aria-label="Secciones de la carta">
+      <label class="tab" for="c-antipasti">Antipasti</label>
+      <label class="tab" for="c-pasta">Pasta</label>
+      <label class="tab" for="c-pizze">Pizzas</label>
+      <label class="tab" for="c-dolci">Postres y bebidas</label>
+    </div>
+    <div class="panel" id="p-antipasti">
+      <h3 class="menu__group">Antipasti di terra</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Focaccia al rosmarino</h4><span class="dish__dots"></span><span class="dish__price">7,90 €</span></div><p class="dish__desc">Focaccia caliente con romero, ajo, sal y aceite de oliva.</p><span class="tag tag--veg">Vegana</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Bruschetta al pomodoro</h4><span class="dish__dots"></span><span class="dish__price">9,90 €</span></div><p class="dish__desc">Pan tostado con tomate fresco, ajo, albahaca, pimienta negra y aceite de oliva virgen extra.</p><span class="tag tag--veg">Vegana</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Deliziosa burrata al pesto</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Hojas mixtas, tomate cherry, burrata, pesto, orégano y albahaca.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Provolone al forno</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Salsa de tomate, queso provolone fundido y orégano.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Carpaccio di bresaola</h4><span class="dish__dots"></span><span class="dish__price">16,90 €</span></div><p class="dish__desc">Hojas mixtas, rúcula, tomate cherry, bresaola, parmesano, limón y pimienta.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Melanzane alla parmigiana</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Berenjena, mozzarella, parmesano, albahaca y salsa de tomate.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Tavola di formaggi misti con miele</h4><span class="dish__dots"></span><span class="dish__price">20,90 €</span></div><p class="dish__desc">Degustación de quesos típicos de Cerdeña con miel y nueces.</p><span class="tag tag--sardo">Típico sardo</span><span class="tag tag--star">Para compartir</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Antipasto misto di terra Fratelli d’Italia</h4><span class="dish__dots"></span><span class="dish__price">26,90 €</span></div><p class="dish__desc">Embutidos y quesos típicos de Cerdeña. Media ración: 16,90 €.</p><span class="tag tag--star">Para compartir</span></div>
+      <h3 class="menu__group">Antipasti di mare</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Pizza frutti di mare</h4><span class="dish__dots"></span><span class="dish__price">16,90 €</span></div><p class="dish__desc">Salsa de tomate, ajo, mejillones, almejas y gambas.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Cozze alla marinara</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Mejillones en salsa marinera con ajo, guindilla, perejil y pane carasau de Cerdeña.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Insalata di mare Fratelli d’Italia</h4><span class="dish__dots"></span><span class="dish__price">16,90 €</span></div><p class="dish__desc">Pulpo, sepia, mejillones, cebolla, apio, vinagreta y pimienta negra.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Brodetto di mare</h4><span class="dish__dots"></span><span class="dish__price">18,90 €</span></div><p class="dish__desc">Tomate, caldo de marisco, cangrejo, mejillones, almejas, gambas, ajo, perejil y guindilla.</p><span class="tag tag--sardo">Típico sardo</span><span class="tag tag--star">Para compartir</span></div>
+      <h3 class="menu__group">Insalate</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Classica</h4><span class="dish__dots"></span><span class="dish__price">10,90 €</span></div><p class="dish__desc">Hojas mixtas, maíz, aceitunas, tomate fresco y cebolla morada.</p><span class="tag tag--veg">Vegana</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Cabrona</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Espinacas, nueces, tomate seco, miel y queso de cabra.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Caprese</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Mozzarella de búfala, tomate fresco y albahaca.</p></div>
+    </div>
+    <div class="panel" id="p-pasta">
+      <h3 class="menu__group">Le nostre paste</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Ravioli al pomodoro e basilico</h4><span class="dish__dots"></span><span class="dish__price">14,90 €</span></div><p class="dish__desc">Pasta fresca rellena de espinacas y ricotta de búfala, con tomate, albahaca y parmesano.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Bucatini all’amatriciana</h4><span class="dish__dots"></span><span class="dish__price">14,90 €</span></div><p class="dish__desc">Guanciale al vino tinto, salsa de tomate y pecorino.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Spaghetti alla carbonara</h4><span class="dish__dots"></span><span class="dish__price">16,90 €</span></div><p class="dish__desc">Huevo de corral, guanciale, grana padano, pecorino y pimienta negra. Los auténticos.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Malloreddus alla campidanese</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Gnocchetti sardos con salsa de tomate, salchicha fresca y pecorino sardo.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Mezzelune di ricotta e porcini</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Pasta fresca rellena de requesón y boletus, con salsa de trufa.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Pappardelle alla bolognese</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Pasta fresca con boloñesa: apio, zanahoria, cebolla, carne picada y tomate.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Fiocchi alla delizia</h4><span class="dish__dots"></span><span class="dish__price">16,90 €</span></div><p class="dish__desc">Pasta fresca rellena de ricotta y pera, con salsa de gorgonzola, trufa y parmesano.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Lasagna di carne</h4><span class="dish__dots"></span><span class="dish__price">14,90 €</span></div><p class="dish__desc">Carne picada, jamón york, verduras, mozzarella, parmesano y salsa de tomate.</p></div>
+      <h3 class="menu__group">Specialità di mare</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Linguine allo scoglio Fratelli d’Italia</h4><span class="dish__dots"></span><span class="dish__price">19,90 €</span></div><p class="dish__desc">Tomate cherry, cangrejo, mejillones, almejas, gambas, guindilla y ajo.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Fregola sarda all’algherese</h4><span class="dish__dots"></span><span class="dish__price">19,90 €</span></div><p class="dish__desc">Pasta típica de Cerdeña con crustáceos, tomate, ajo y guindilla. Precio por persona, mínimo 2.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Fettuccine all’astice</h4><span class="dish__dots"></span><span class="dish__price">24,90 €</span></div><p class="dish__desc">Pasta fresca con bogavante en salsa de tomate fresco, ajo y perejil. Precio por persona, mínimo 2.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Linguine all’aragosta</h4><span class="dish__dots"></span><span class="dish__price">32,90 €</span></div><p class="dish__desc">Langosta, tomate cherry, ajo y albahaca.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Spaghetti alle vongole</h4><span class="dish__dots"></span><span class="dish__price">16,90 €</span></div><p class="dish__desc">Almejas, ajo, perejil y vino blanco. Con bottarga, 2 € más.</p></div>
+    </div>
+    <div class="panel" id="p-pizze">
+      <h3 class="menu__group">Pizze tradizionali</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Marinara</h4><span class="dish__dots"></span><span class="dish__price">9,90 €</span></div><p class="dish__desc">Salsa de tomate, ajo, aceite de oliva y orégano.</p><span class="tag tag--veg">Vegana</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Margherita</h4><span class="dish__dots"></span><span class="dish__price">10,90 €</span></div><p class="dish__desc">Tomate, mozzarella y albahaca.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Funghi</h4><span class="dish__dots"></span><span class="dish__price">11,90 €</span></div><p class="dish__desc">Tomate, mozzarella y champiñones.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Prosciutto</h4><span class="dish__dots"></span><span class="dish__price">11,90 €</span></div><p class="dish__desc">Tomate, mozzarella y jamón york.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Prosciutto e funghi</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Tomate, mozzarella, jamón york y champiñones.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Marchigiana</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Tomate, mozzarella, provolone, jamón serrano y orégano.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Diavola</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Tomate, mozzarella y salami picante.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Parmigiana</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Tomate, mozzarella, berenjena, parmesano, ajo y albahaca.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Sarda</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Tomate, mozzarella, panceta ahumada y pecorino sardo.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Capricciosa</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Tomate, mozzarella, jamón york, champiñones, alcachofas y aceitunas.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Vegetariana</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Tomate, mozzarella, espinacas, champiñones, calabacín, tomate cherry y ajo.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Vegana</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Tomate, espinacas, champiñones, calabacín, berenjena, tomate seco y ajo.</p><span class="tag tag--veg">Vegana</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Calzone</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Tomate, mozzarella, pecorino sardo, jamón york y champiñones.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Calzone vegetariano</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Tomate, mozzarella, espinacas, champiñones, calabacín y gorgonzola.</p></div>
+      <h3 class="menu__group">Pizze bianche</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Quattro formaggi</h4><span class="dish__dots"></span><span class="dish__price">11,90 €</span></div><p class="dish__desc">Mozzarella, gorgonzola, provolone y parmesano.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Primadonna</h4><span class="dish__dots"></span><span class="dish__price">12,90 €</span></div><p class="dish__desc">Mozzarella, jamón serrano, rúcula, tomate cherry y parmesano.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Chueca</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Mozzarella, berenjena, calabacín, tomate seco, pecorino, ajo y albahaca.</p></div>
+      <h3 class="menu__group">Pizze gourmet · con mozzarella di bufala</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Regina Margherita</h4><span class="dish__dots"></span><span class="dish__price">13,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, albahaca, orégano y aceite de oliva virgen extra.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Garibaldi</h4><span class="dish__dots"></span><span class="dish__price">14,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, albahaca, orégano, aceite y pesto.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Fratelli d’Italia</h4><span class="dish__dots"></span><span class="dish__price">14,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, rúcula y aceitunas.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Napoletana</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, alcaparras, anchoas, tomate cherry, orégano y aceite.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Scurnacchiata</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, jamón serrano, calabacín, parmesano y ajo.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Moreno</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, rúcula, tomate seco y aceite de trufa blanca.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">La vita è bella</h4><span class="dish__dots"></span><span class="dish__price">15,90 €</span></div><p class="dish__desc">Tomate, mozzarella de búfala, salami picante, cebolla y aceitunas negras.</p></div>
+    </div>
+    <div class="panel" id="p-dolci">
+      <h3 class="menu__group">Dolci</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Tiramisù classico</h4><span class="dish__dots"></span><span class="dish__price">6,50 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Tiramisù alla Nutella</h4><span class="dish__dots"></span><span class="dish__price">6,90 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Cannolo siciliano</h4><span class="dish__dots"></span><span class="dish__price">6,00 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Panna cotta</h4><span class="dish__dots"></span><span class="dish__price">5,00 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Sorbetto al limone</h4><span class="dish__dots"></span><span class="dish__price">5,00 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Tarta de la casa</h4><span class="dish__dots"></span><span class="dish__price">5,00 €</span></div></div>
+      <h3 class="menu__group">Caffè</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Espresso</h4><span class="dish__dots"></span><span class="dish__price">2,20 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Macchiato</h4><span class="dish__dots"></span><span class="dish__price">2,30 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Caffè latte</h4><span class="dish__dots"></span><span class="dish__price">2,90 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Cappuccino</h4><span class="dish__dots"></span><span class="dish__price">2,90 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Caffè corretto</h4><span class="dish__dots"></span><span class="dish__price">3,00 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Tés e infusiones</h4><span class="dish__dots"></span><span class="dish__price">2,00 €</span></div><p class="dish__desc">Té verde, té rojo, tila, manzanilla y menta poleo.</p></div>
+      <h3 class="menu__group">Cócteles y aperitivos</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Spritz</h4><span class="dish__dots"></span><span class="dish__price">8,50 €</span></div><p class="dish__desc">Prosecco, Aperol y seltz.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Negroni</h4><span class="dish__dots"></span><span class="dish__price">8,50 €</span></div><p class="dish__desc">Campari, Cinzano y gin.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Negroni sbagliato</h4><span class="dish__dots"></span><span class="dish__price">8,50 €</span></div><p class="dish__desc">Prosecco, Cinzano rosso y Campari.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Americano</h4><span class="dish__dots"></span><span class="dish__price">8,50 €</span></div><p class="dish__desc">Campari, Cinzano rosso y seltz.</p></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Tinto de verano</h4><span class="dish__dots"></span><span class="dish__price">4,90 €</span></div><p class="dish__desc">Vino tinto con Fanta limón o Casera.</p></div>
+      <h3 class="menu__group">Cervezas y bebidas</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Ichnusa · tercio</h4><span class="dish__dots"></span><span class="dish__price">3,80 €</span></div><p class="dish__desc">Cerveza de Cerdeña, también sin filtrar.</p><span class="tag tag--sardo">Típico sardo</span></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Moretti</h4><span class="dish__dots"></span><span class="dish__price">3,80 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Peroni Nastro Azzurro · tercio</h4><span class="dish__dots"></span><span class="dish__price">3,80 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Doble</h4><span class="dish__dots"></span><span class="dish__price">3,50 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Sin alcohol</h4><span class="dish__dots"></span><span class="dish__price">3,30 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Agua</h4><span class="dish__dots"></span><span class="dish__price">2,50 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Agua con gas</h4><span class="dish__dots"></span><span class="dish__price">3,00 €</span></div></div>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Refrescos</h4><span class="dish__dots"></span><span class="dish__price">3,50 €</span></div></div>
+      <h3 class="menu__group">Amari e distillati</h3>
+      <div class="dish"><div class="dish__line"><h4 class="dish__name">Mirto · Limoncello · Grappa</h4><span class="dish__dots"></span><span class="dish__price">4,50 €</span></div><p class="dish__desc">También Montenegro y Cinzano.</p><span class="tag tag--sardo">Típico sardo</span></div>
+    </div>
+    </div>
+    <p class="menu__note">Pan y aperitivo: 2 € por persona. En las pastas con marisco o pescado no servimos parmesano; si lo pides, 1,50 €. IVA incluido. Los precios pueden variar según el local. Si tienes alguna alergia o intolerancia, pregunta al personal.</p>
+  </div>
+</section>
+<section class="reservas" id="reservar" aria-labelledby="h-reservar">
+  <div class="reservas__bg"><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/local2.webp" alt="" width="906" height="602" loading="lazy"></div>
+  <div class="container">
+    <div class="tricolore" aria-hidden="true"><span></span><span></span><span></span></div>
+    <h2 class="reservas__title" id="h-reservar">¿Quedamos <em>hoy</em>?</h2>
+    <p class="reservas__sub">Mesa en Retiro o en Chueca, o pizza a domicilio desde Lavapiés. Como quieras, cuando quieras.</p>
+    <div class="orders">
+      <div class="order">
+        <span class="order__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16.5" rx="2"/><path d="M8 2.5v4M16 2.5v4M3 10h18M8 14.5h3"/></svg></span>
+        <h3>Reservar mesa</h3>
+        <p>Reserva online en Google o llama directamente al local.</p>
+        <div class="order__btns">
+          <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/msh8fSo1kl4?source=pa&amp;opi=79508299&amp;hl=es-ES&amp;gei=ZdEAatvKOMuohbIP0oLTqQQ&amp;sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m17!1s0xd4229f72731aca1:0xeee8689235b8ea0e!3m12!1m3!1d397.4487276812623!2d-3.67138669496352!3d40.41750355577265!2m3!1f0!2f0!3f0!3m2!1i1432!2i956!4f13.1!4m2!3d40.417617329033085!4d-3.671579360961914!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m2!1sYNEAapXqCdOkhbIP6P_r-Qs!7e81!15m111!1m29!4e2!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1382!2i0!2m2!1i1432!2i956!1m6!1m2!1i0!2i0!2m2!1i1432!2i20!1m6!1m2!1i0!2i936!2m2!1i1432!2i956!22m2!1e81!8e1!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria%26q%3DFratelli%2Bd%27Italia:%2Bristorante%2Bpizzeria">Retiro</a>
+          <a class="btn btn-primary" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/reserve/v/dine/c/crwdRvjI9Qc?source=pa&amp;opi=79508299&amp;hl=es-ES&amp;gei=YtMAar_5NYu5hbIP5feAiA8&amp;sourceurl=https://www.google.es/maps/preview/place?authuser%3D0%26hl%3Des%26gl%3Des%26pb%3D!1m20!1s0xd4228864c09b6b3:0xed2e2ecf40571bf!3m12!1m3!1d3179.5695535290306!2d-3.6709769949375377!3d40.41793242652879!2m3!1f0!2f0!3f0!3m2!1i1912!2i956!4f13.1!4m2!3d40.421588299999996!4d-3.7000886!5e0!9e0!11s/g/11cs241b9r!12m4!2m3!1i360!2i120!4i8!13m57!2m2!1i203!2i100!3m2!2i4!5b1!6m6!1m2!1i86!2i86!1m2!1i408!2i240!7m33!1m3!1e1!2b0!3e3!1m3!1e2!2b1!3e2!1m3!1e2!2b0!3e3!1m3!1e8!2b0!3e3!1m3!1e10!2b0!3e3!1m3!1e10!2b1!3e2!1m3!1e10!2b0!3e4!1m3!1e9!2b1!3e2!2b1!9b0!15m8!1m7!1m2!1m1!1e2!2m2!1i195!2i195!3i20!14m6!1sYNEAapXqCdOkhbIP6P_r-Qs:119!2s1i:0,t:6986,p:YNEAapXqCdOkhbIP6P_r-Qs:119!7e81!12e15!17sYNEAapXqCdOkhbIP6P_r-Qs:122!18e3!15m110!1m28!13m9!2b1!3b1!4b1!6i1!8b1!9b1!14b1!20b1!25b1!18m17!3b1!4b1!5b1!6b1!9b1!13b1!14b1!17b1!20b1!21b1!22b1!30b1!32b1!33m1!1b1!34b1!36e2!10m1!8e3!11m1!3e1!17b1!20m2!1e3!1e6!24b1!25b1!26b1!27b1!29b1!30m1!2b1!36b1!37b1!39m3!2m2!2i1!3i1!43b1!52b1!54m1!1b1!55b1!56m1!1b1!61m2!1m1!1e1!65m5!3m4!1m3!1m2!1i224!2i298!72m22!1m8!2b1!5b1!7b1!12m4!1b1!2b1!4m1!1e1!4b1!8m10!1m6!4m1!1e1!4m1!1e3!4m1!1e4!3sother_user_google_review_posts__and__hotel_and_vr_partner_review_posts!6m1!1e1!9b1!89b1!90m2!1m1!1e2!98m3!1b1!2b1!3b1!103b1!113b1!114m3!1b1!2m1!1b1!117b1!122m1!1b1!126b1!127b1!128m1!1b0!21m28!1m6!1m2!1i0!2i0!2m2!1i530!2i956!1m6!1m2!1i1862!2i0!2m2!1i1912!2i956!1m6!1m2!1i0!2i0!2m2!1i1912!2i20!1m6!1m2!1i0!2i936!2m2!1i1912!2i956!22m1!1e81!29m0!30m6!3b1!6m1!2b1!7m1!2b1!9b1!34m5!7b1!10b1!14b1!15m1!1b0!37i779!39sFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid%26q%3DFratelli%2Bd%27Italia%2B%257C%2BRISTORANTE%2BPIZZERIA%2BChueca,%2BCalle%2Bde%2BHortaleza,%2BMadrid">Chueca</a>
+        </div>
+      </div>
+      <div class="order">
+        <span class="order__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17h7l3-7h3M13 17l-2-7H7"/></svg></span>
+        <h3>Pedir a domicilio</h3>
+        <p>Llama a Lavapiés y pásate a recoger, o pide a domicilio a través de Glovo.</p>
+        <div class="order__btns">
+          <a class="btn btn-cream" href="tel:+34915275431">Llamar a Lavapiés</a>
+          <a class="btn btn-cream" href="https://glovoapp.com/en/es/madrid/stores/fratelli-ditalia-madrid" target="_blank" rel="noopener noreferrer">Pedir en Glovo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="container">
+    <div class="foot__grid">
+      <div class="foot__brand">
+        <span class="foot__seal"><img src="https://cdn.jsdelivr.net/gh/urpito/Fratelli-d-Italia@985c53443ca5538b32dc6f10757eaf7c1eeb9669/img/logo-garibaldi.webp" alt="" width="30" height="58" loading="lazy"></span>
+        <div>
+          <strong>Fratelli d’Italia</strong>
+          <p>Ristorante pizzeria con specialità sarde, a Madrid dal 2010. Menú del día de lunes a viernes: consúltalo en Instagram.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Locales</h2>
+        <ul>
+          <li><a href="#retiro">Retiro · C/ Antonio Arias, 4</a></li>
+          <li><a href="#chueca">Chueca · C/ Hortaleza, 28</a></li>
+          <li><a href="#lavapies">Lavapiés · C/ Sombrerete, 1</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a href="mailto:ven@fratelliditalia.es">ven@fratelliditalia.es</a></li>
+          <li><a href="https://www.instagram.com/fratelli_madrid/" target="_blank" rel="noopener noreferrer">Instagram · @fratelli_madrid</a></li>
+          <li><a href="tel:+34919286177">91 928 61 77 · Retiro</a></li>
+          <li><a href="tel:+34915154106">91 515 41 06 · Chueca</a></li>
+          <li><a href="tel:+34915275431">91 527 54 31 · Lavapiés</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="foot__legal">© 2026 Fratelli d’Italia · Madrid</p>
+  </div>
+</footer>
+</div>
