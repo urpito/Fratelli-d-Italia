@@ -83,6 +83,8 @@ html,body{{overflow-x:clip}}
 .fluid-engine:has({SCOPE}){{display:block!important}}
 .fe-block:has({SCOPE}){{position:static!important;width:auto!important;height:auto!important}}
 {SCOPE}{{position:relative;width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}}
+{SCOPE}{{font-weight:400}}
+{SCOPE} p,{SCOPE} li{{line-height:inherit;font-weight:inherit}}
 {SCOPE} p,{SCOPE} h1,{SCOPE} h2,{SCOPE} h3,{SCOPE} h4{{margin:0;letter-spacing:normal;text-transform:none}}
 {SCOPE} a{{text-decoration:none}}
 {SCOPE} :where(p,li,a,span,label,small,b,strong,em,figcaption,blockquote){{font-family:inherit!important}}
