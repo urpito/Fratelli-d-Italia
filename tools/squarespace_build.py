@@ -72,6 +72,8 @@ def main():
     css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
     css = css.replace("url(fonts/", f"url({cdn}fonts/")
     scoped = scope_css(css)
+    # La plantilla impone su fuente en p, h1… desde CSS externo: nuestras fuentes mandan
+    scoped = re.sub(r"(font(?:-family)?:[^;{}]+?)\s*;", r"\1 !important;", scoped)
     # Solo se carga en la página que lleva el bloque: ahí manda nuestro diseño
     extra = f"""
 html,body{{overflow-x:clip}}
@@ -83,6 +85,7 @@ html,body{{overflow-x:clip}}
 {SCOPE}{{position:relative;width:100vw;margin-left:calc(50% - 50vw);text-align:left;overflow-x:clip}}
 {SCOPE} p,{SCOPE} h1,{SCOPE} h2,{SCOPE} h3,{SCOPE} h4{{margin:0;letter-spacing:normal;text-transform:none}}
 {SCOPE} a{{text-decoration:none}}
+{SCOPE} :where(p,li,a,span,label,small,b,strong,em,figcaption,blockquote){{font-family:inherit!important}}
 """
     body = re.search(r"<body>(.*?)<script>", src, re.S).group(1)
     body = re.sub(r'(src|href)="(img|fonts)/', lambda m: f'{m.group(1)}="{cdn}{m.group(2)}/', body)
